@@ -1,0 +1,1307 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <title>Family Money Program｜家計の不安を一緒に整理する伴走型トレーニング</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="description"
+    content="給料は上がらないのに物価だけが上がる…そんな家計の不安を、専属コーチと一緒に整理する伴走型お金のトレーニング「Family Money Program」のご案内ページです。"
+  />
+  <style>
+    :root {
+      --primary: #2d6a4f;
+      --primary-light: #40916c;
+      --accent: #f4a261;
+      --bg: #f7f7fb;
+      --text: #333333;
+      --muted: #6c757d;
+      --white: #ffffff;
+      --max-width: 1060px;
+      --radius-lg: 18px;
+      --radius-md: 12px;
+      --shadow-soft: 0 22px 45px rgba(0, 0, 0, 0.08);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue",
+        "YuGothic", "游ゴシック体", "Yu Gothic", "メイリオ", sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.8;
+    }
+
+    a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .page {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 24px 20px 72px;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .logo {
+      font-weight: 700;
+      font-size: 1.1rem;
+      letter-spacing: 0.04em;
+      color: var(--primary);
+    }
+
+    .tagline {
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    .header-cta {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .header-badge {
+      font-size: 0.78rem;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: #eaf4ef;
+      color: var(--primary);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 22px;
+      border-radius: 999px;
+      border: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      cursor: pointer;
+      text-decoration: none;
+      transition: transform 0.08s ease, box-shadow 0.08s ease,
+        background 0.12s ease;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary), var(--primary-light));
+      color: var(--white);
+      box-shadow: 0 10px 25px rgba(45, 106, 79, 0.26);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 16px 35px rgba(45, 106, 79, 0.32);
+    }
+
+    .btn-outline {
+      background: var(--white);
+      color: var(--primary);
+      border: 1px solid #d8e2dc;
+    }
+
+    .btn-outline:hover {
+      background: #f1f5f3;
+    }
+
+    /* Hero */
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.8fr) minmax(0, 1.4fr);
+      gap: 32px;
+      align-items: center;
+      padding: 32px 26px;
+      background: radial-gradient(circle at top left, #e3f2fd 0, #f7f7fb 55%);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-soft);
+      margin-bottom: 40px;
+    }
+
+    .hero-label {
+      font-size: 0.8rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--primary-light);
+      margin-bottom: 8px;
+    }
+
+    .hero-title-main {
+      font-size: 1.9rem;
+      font-weight: 700;
+      margin: 0 0 10px;
+    }
+
+    .hero-title-sub {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #444;
+      margin-bottom: 16px;
+    }
+
+    .hero-em {
+      color: var(--primary);
+    }
+
+    .hero-lead {
+      font-size: 0.98rem;
+      color: var(--muted);
+      margin-bottom: 20px;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 18px;
+      font-size: 0.86rem;
+      color: var(--muted);
+    }
+
+    .meta-pill {
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: #ffffff;
+      border: 1px solid #e1e5ea;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .hero-ctas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+      margin-bottom: 16px;
+    }
+
+    .hero-note {
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .hero-present {
+      margin-top: 10px;
+      padding: 12px 14px;
+      border-radius: 12px;
+      background: #fff7e9;
+      border: 1px solid #ffe0a6;
+      font-size: 0.86rem;
+    }
+
+    .hero-present-title {
+      font-weight: 700;
+      color: #b26a00;
+      margin-bottom: 4px;
+    }
+
+    .hero-present-list {
+      margin: 0;
+      padding-left: 18px;
+    }
+
+    .hero-image {
+      position: relative;
+      border-radius: 20px;
+      overflow: hidden;
+      background: linear-gradient(135deg, #e8f5e9, #f1f8e9);
+      padding: 22px 20px 20px;
+    }
+
+    .hero-image-main {
+      border-radius: 18px;
+      background: #ffffff;
+      padding: 18px 18px 14px;
+      box-shadow: 0 18px 35px rgba(0, 0, 0, 0.05);
+    }
+
+    .hero-image-caption {
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-top: 8px;
+    }
+
+    .hero-image-tag {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.92);
+      font-size: 0.78rem;
+      color: var(--primary);
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.06);
+    }
+
+    /* Sections */
+    section {
+      margin-bottom: 40px;
+    }
+
+    .section-header {
+      margin-bottom: 18px;
+    }
+
+    .section-kicker {
+      font-size: 0.78rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--primary-light);
+      margin-bottom: 4px;
+    }
+
+    .section-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin: 0 0 4px;
+    }
+
+    .section-subtitle {
+      font-size: 0.92rem;
+      color: var(--muted);
+      margin: 0;
+    }
+
+    /* Problem list */
+    .problem-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px 24px;
+    }
+
+    .problem-item {
+      display: flex;
+      gap: 10px;
+      padding: 10px 12px;
+      border-radius: 12px;
+      background: #ffffff;
+      border: 1px solid #edf1f5;
+    }
+
+    .problem-icon {
+      flex-shrink: 0;
+      width: 22px;
+      height: 22px;
+      border-radius: 999px;
+      background: #ffe5e0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.78rem;
+    }
+
+    .problem-text {
+      font-size: 0.9rem;
+    }
+
+    /* Intro / what is section */
+    .two-column {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.6fr);
+      gap: 28px;
+      align-items: flex-start;
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: var(--radius-md);
+      padding: 18px 18px 16px;
+      border: 1px solid #edf0f6;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.03);
+    }
+
+    .card h3 {
+      margin-top: 0;
+      font-size: 1.02rem;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      margin-top: 0;
+      font-size: 0.9rem;
+    }
+
+    .card ul {
+      margin: 8px 0 0;
+      padding-left: 18px;
+      font-size: 0.9rem;
+    }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 10px;
+      font-size: 0.82rem;
+    }
+
+    .pill-row span {
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: #f3f5ff;
+      color: #29335c;
+    }
+
+    /* Recommend */
+    .recommend-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px 20px;
+    }
+
+    .recommend-item {
+      padding: 10px 12px;
+      border-radius: 10px;
+      background: #ffffff;
+      border: 1px solid #edf0f6;
+      font-size: 0.9rem;
+    }
+
+    .cta-inline {
+      margin-top: 16px;
+      font-size: 0.9rem;
+    }
+
+    /* Detail / learning section */
+    .learn-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.5fr) minmax(0, 1.3fr);
+      gap: 26px;
+      align-items: flex-start;
+    }
+
+    .learn-list {
+      margin: 10px 0 0;
+      padding-left: 18px;
+      font-size: 0.9rem;
+    }
+
+    .learn-strong {
+      font-weight: 600;
+      color: var(--primary);
+    }
+
+    .feature-list {
+      margin: 6px 0 0;
+      padding-left: 18px;
+      font-size: 0.9rem;
+    }
+
+    .feature-list li + li {
+      margin-top: 4px;
+    }
+
+    .thumb-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .thumb {
+      border-radius: 10px;
+      background: #ffffff;
+      border: 1px dashed #d8dde7;
+      padding: 10px;
+      font-size: 0.82rem;
+      text-align: center;
+      color: var(--muted);
+    }
+
+    /* Change section */
+    .change-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px 20px;
+    }
+
+    .change-item {
+      position: relative;
+      padding: 12px 14px 12px 32px;
+      border-radius: 12px;
+      background: #ffffff;
+      border: 1px solid #edf0f6;
+      font-size: 0.9rem;
+    }
+
+    .change-item::before {
+      content: "✓";
+      position: absolute;
+      top: 11px;
+      left: 12px;
+      width: 18px;
+      height: 18px;
+      border-radius: 999px;
+      background: #e6f4ea;
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.72rem;
+    }
+
+    /* Voice / testimonials */
+    .voice-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px 22px;
+    }
+
+    .voice-card {
+      background: #ffffff;
+      border-radius: 14px;
+      padding: 16px 16px 14px;
+      border: 1px solid #edf0f6;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.02);
+      font-size: 0.9rem;
+    }
+
+    .voice-meta {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-bottom: 4px;
+    }
+
+    .voice-heading {
+      font-weight: 700;
+      font-size: 0.96rem;
+      margin-bottom: 6px;
+      color: #222;
+    }
+
+    /* Flow */
+    .flow-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px 20px;
+    }
+
+    .flow-item {
+      background: #ffffff;
+      border-radius: 14px;
+      padding: 14px 14px 12px;
+      border: 1px solid #edf0f6;
+      font-size: 0.88rem;
+      position: relative;
+    }
+
+    .flow-step {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 4px;
+      text-transform: uppercase;
+    }
+
+    .flow-title {
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    /* FAQ */
+    .faq-list {
+      display: grid;
+      grid-template-columns: minmax(0, 1.5fr) minmax(0, 1.5fr);
+      gap: 14px 20px;
+    }
+
+    .faq-item {
+      background: #ffffff;
+      border-radius: 12px;
+      padding: 12px 14px 10px;
+      border: 1px solid #edf0f6;
+      font-size: 0.9rem;
+    }
+
+    .faq-q {
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .faq-q::before {
+      content: "Q";
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 18px;
+      height: 18px;
+      border-radius: 999px;
+      background: #e6f4ea;
+      color: var(--primary);
+      font-size: 0.7rem;
+      margin-right: 6px;
+    }
+
+    .faq-a {
+      font-size: 0.88rem;
+      color: var(--muted);
+    }
+
+    /* CTA block */
+    .cta-block {
+      margin: 40px 0;
+      padding: 22px 20px 20px;
+      border-radius: 18px;
+      background: linear-gradient(135deg, #f3f9ff, #e6f4ea);
+      border: 1px solid #d3e5ff;
+      text-align: center;
+    }
+
+    .cta-block-title {
+      font-size: 1.18rem;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .cta-block-text {
+      font-size: 0.92rem;
+      color: #444;
+      margin-bottom: 14px;
+    }
+
+    .cta-block-note {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-top: 8px;
+    }
+
+    /* Present section */
+    .present-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1.8fr);
+      gap: 20px;
+      align-items: start;
+    }
+
+    .present-list {
+      margin: 10px 0 0;
+      padding-left: 18px;
+      font-size: 0.9rem;
+    }
+
+    .present-link {
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    /* Generic link section placeholders */
+    .simple-card {
+      background: #ffffff;
+      border-radius: 12px;
+      padding: 14px 16px 12px;
+      border: 1px solid #edf0f6;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    /* Footer */
+    footer {
+      margin-top: 40px;
+      padding-top: 18px;
+      border-top: 1px solid #e1e4eb;
+      font-size: 0.78rem;
+      color: var(--muted);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .hero {
+        grid-template-columns: minmax(0, 1fr);
+        padding: 22px 18px;
+      }
+
+      .hero-image {
+        order: -1;
+      }
+
+      .problem-grid,
+      .two-column,
+      .recommend-grid,
+      .learn-layout,
+      .change-grid,
+      .voice-grid,
+      .flow-grid,
+      .faq-list,
+      .present-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    @media (max-width: 640px) {
+      .page {
+        padding: 18px 14px 40px;
+      }
+
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .hero-title-main {
+        font-size: 1.6rem;
+      }
+
+      .section-title {
+        font-size: 1.12rem;
+      }
+
+      .header-cta {
+        justify-content: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <div>
+        <div class="logo">Family Money Program</div>
+        <div class="tagline">
+          家族の暮らしと未来を守る、伴走型お金のトレーニング
+        </div>
+      </div>
+      <div class="header-cta">
+        <span class="header-badge">満足度98% / 累計受講者◯◯名</span>
+        <a
+          href="https://b-book.run/@moneyplan.adviser"
+          class="btn btn-outline"
+        >
+          無料相談を申し込む
+        </a>
+      </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+      <div>
+        <div class="hero-label">TOP</div>
+        <h1 class="hero-title-main">
+          給料は上がらないのに、<br />物価だけが上がる——
+        </h1>
+        <p class="hero-title-sub">
+          その不安、<span class="hero-em">ひとりで抱えなくて大丈夫</span>です。
+        </p>
+        <p class="hero-lead">
+          家族の暮らしと未来を守る、<span class="hero-em">伴走型</span
+          >お金のトレーニング<br />
+          <strong>Family Money Program</strong>
+        </p>
+        <div class="hero-meta">
+          <span class="meta-pill">
+            <span>累計受講者</span><strong>◯◯人</strong>
+          </span>
+          <span class="meta-pill">
+            <span>受講満足度</span><strong>98%</strong>
+          </span>
+        </div>
+
+        <div class="hero-ctas">
+          <a
+            href="https://b-book.run/@moneyplan.adviser"
+            class="btn btn-primary"
+          >
+            無料相談を申し込む
+          </a>
+          <a href="#present" class="btn btn-outline"> 無料プレゼントを確認する </a>
+        </div>
+        <p class="hero-note">
+          ※お申し込み後のオンライン無料セミナー内で、今の家計についてご相談いただけます。
+        </p>
+
+        <div class="hero-present">
+          <div class="hero-present-title">今なら、ご参加の方全員にプレゼント</div>
+          <ul class="hero-present-list">
+            <li>簡単ライフシミュレーション</li>
+            <li>家計診断チェックシート</li>
+            <li>家計簿シート</li>
+          </ul>
+        </div>
+      </div>
+      <div class="hero-image">
+        <div class="hero-image-tag">家族で一緒に、これからのお金を考える時間</div>
+        <div class="hero-image-main">
+          <!-- 実際にはここにヒーロー画像を置く -->
+          <div
+            style="
+              height: 180px;
+              border-radius: 14px;
+              background: linear-gradient(135deg, #ffe5e0, #fffaf0);
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              color: #b26a00;
+              font-size: 0.9rem;
+              text-align: center;
+              padding: 0 16px;
+            "
+          >
+            ここに「家族でテーブルを囲む様子」など<br />
+            実際のヒーロー画像が入ります
+          </div>
+          <div class="hero-image-caption">
+            alt例：「リビングで家族が笑顔で話す様子」
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Problems -->
+    <section id="problems">
+      <div class="section-header">
+        <div class="section-kicker">PROBLEM</div>
+        <h2 class="section-title">こんなお悩み、ありませんか？</h2>
+      </div>
+
+      <div class="problem-grid">
+        <div class="problem-item">
+          <div class="problem-icon">!</div>
+          <div class="problem-text">
+            クレジットカードの請求が毎月予想外に高額で、<br />
+            「使った気がしないのに、なんで5万円も？」と驚いている
+          </div>
+        </div>
+        <div class="problem-item">
+          <div class="problem-icon">?</div>
+          <div class="problem-text">
+            子供の将来にいくらかかるのか全くわからず、<br />
+            「教育費2000万円って本当？うちには無理…」と漠然と不安
+          </div>
+        </div>
+        <div class="problem-item">
+          <div class="problem-icon">…</div>
+          <div class="problem-text">
+            家計が圧迫していて、旦那から「お小遣い増やして」と言われても、<br />
+            むしろ減らさないといけない
+          </div>
+        </div>
+        <div class="problem-item">
+          <div class="problem-icon">💬</div>
+          <div class="problem-text">
+            夫婦でお金の話をするとギクシャクして、<br />
+            相談できる相手がいない
+          </div>
+        </div>
+        <div class="problem-item">
+          <div class="problem-icon">🏠</div>
+          <div class="problem-text">
+            車の買い替え、家、教育費——<br />
+            何をどう準備すればいいかわからず、将来がぼんやり怖い
+          </div>
+        </div>
+        <div class="problem-item">
+          <div class="problem-icon">📄</div>
+          <div class="problem-text">
+            市役所や手続きのたびに「こんなにお金がかかるの？」と知って、<br />
+            不安が増えていく
+          </div>
+        </div>
+        <div class="problem-item">
+          <div class="problem-icon">🛒</div>
+          <div class="problem-text">
+            スーパーで同じ買い物をしているだけなのに、<br />
+            1000円台が2000円台になって、このまま本当に大丈夫なのか不安
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Program intro -->
+    <section>
+      <div class="section-header">
+        <div class="section-kicker">SOLUTION</div>
+        <h2 class="section-title">
+          その悩み、満足度98%の「Family Money Program」なら<br />一緒に道筋をつけていけます
+        </h2>
+      </div>
+
+      <div class="two-column">
+        <div class="card">
+          <h3>不安は、あなたが悪いから生まれるわけではありません</h3>
+          <p>
+            「見えない」「相談できる人がいない」「何から手をつければいいかわからない」——
+            <br />その3つが重なると、誰でも不安になります。
+          </p>
+          <p>
+            Family Money Programは、<strong
+              >専属コーチがあなたの家計と向き合い、<br />見える化と計画の“伴走”をするサービス</strong
+            >です。
+          </p>
+          <p>
+            受講生の多くが「将来が不安で何から手をつけていいかわからなかった」という、<br />
+            同じ悩みからスタートしています。
+          </p>
+        </div>
+        <div class="card">
+          <h3>「Family Money Program」とは？</h3>
+          <p>
+            「Family Money Program」は、<strong
+              >すぐに暮らしに効く、実践型のお金のトレーニング</strong
+            >です。
+          </p>
+          <ul>
+            <li>家計のことは親にも相談しづらい</li>
+            <li>
+              本やセミナーで「知識」は得たけれど、投資やFPの話だけでは、<br />今の赤字や漠然とした不安は変わらなかった
+            </li>
+          </ul>
+          <p>
+            ——そんな「知っているのに現実が変わらない」もやもやを、<br />
+            <strong>専属コーチと一緒に「貯める」「続ける」に落とし込んでいきます。</strong>
+          </p>
+          <div class="pill-row">
+            <span>ムリのない見直しのコツ</span>
+            <span>支出の選び方</span>
+            <span>家庭に合ったお金の計画図</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Learn detail -->
+    <section>
+      <div class="section-header">
+        <div class="section-kicker">PROGRAM DETAIL</div>
+        <h2 class="section-title">Family Money Programで学べること</h2>
+        <p class="section-subtitle">
+          「わかった」で終わらせず、行動に繋げることを大切にしています。
+        </p>
+      </div>
+
+      <div class="learn-layout">
+        <div class="card">
+          <h3>「貯める」と「続ける」を整える</h3>
+          <p>
+            「貯める」では、貯金したくても結果が出ない理由を一緒に整理し、<br />
+            <span class="learn-strong">ムリのない見直しのコツ</span>や<br />
+            <span class="learn-strong">支出の選び方</span>に気づいていただきます。
+          </p>
+          <p>
+            さらに、ご家族の<span class="learn-strong"
+              >生活スタイルに合った“お金の計画図”</span
+            >を一緒に組み立て、<br />実践までつなげます。
+          </p>
+          <p>
+            「続ける」では、<span class="learn-strong"
+              >ご家庭の“お金の管理のやり方”</span
+            >を一緒に設計します。<br />
+            ひとりでは気づかない視点ややり方が、コーチとの対話から見えてくることが多いです。
+          </p>
+          <p>
+            「貯める」「続ける」が整うと、<br />
+            <span class="learn-strong"
+              >将来への不安が「安心」と「自分でできそう」という感覚に変わっていく</span
+            >——<br />それを、豊かな人生への小さな一歩として支えます。
+          </p>
+          <ul class="learn-list">
+            <li>
+              お金の流れが見える<strong>ムリしない節約のコツ</strong>
+            </li>
+            <li>
+              収入を変えずに<strong>暮らしにゆとりをつくる</strong>工夫
+            </li>
+            <li>
+              <strong>支出のクセを見直し</strong>ムダをスッキリ解消
+            </li>
+            <li>
+              <strong>自分らしいお金の使い方</strong>の見つけ方
+            </li>
+            <li>
+              <strong>教育・住宅・老後に備える</strong>お金のバランス術
+            </li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>プログラムの強み</h3>
+          <ul class="feature-list">
+            <li>月1回の1on1トレーニング</li>
+            <li>支出の分析・見える化のサポート</li>
+            <li>LINEでいつでも相談</li>
+            <li>資産形成のアドバイス</li>
+          </ul>
+          <p style="margin-top: 10px">
+            「わかったつもり」で終わらせず、<br />
+            <strong>行動を通じて、家族を守る土台</strong>をつくります。
+          </p>
+          <p style="margin-top: 12px; font-weight: 600; font-size: 0.9rem">
+            講座の一部を紹介します
+          </p>
+          <div class="thumb-grid">
+            <div class="thumb">支出の分析・見える化をサポート</div>
+            <div class="thumb">LINEでいつでも相談</div>
+            <div class="thumb">1on1でお悩み解決</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Recommend -->
+    <section>
+      <div class="section-header">
+        <div class="section-kicker">FOR WHO</div>
+        <h2 class="section-title">こんな人におすすめです</h2>
+      </div>
+
+      <div class="recommend-grid">
+        <div class="recommend-item">
+          節約ばかりの暮らしから抜け出したい
+        </div>
+        <div class="recommend-item">
+          自分や家族に合った、無理のないお金の貯め方を見つけたい
+        </div>
+        <div class="recommend-item">
+          子供の教育費や老後のために、いまからしっかり準備したい
+        </div>
+        <div class="recommend-item">
+          家計管理を始めたいがこれまで続かなかった——<br />挫折しないやり方を知りたい
+        </div>
+        <div class="recommend-item">
+          子供の教育費は、早いうちからできることを始めておきたい
+        </div>
+        <div class="recommend-item">
+          たまには贅沢できるくらいの、余裕のある暮らしを手に入れたい
+        </div>
+        <div class="recommend-item">
+          将来のお金の不安を、いまのうちに減らしたい
+        </div>
+        <div class="recommend-item">
+          NISAや投資に興味はあるけれど、月々が赤字で手がつけられない
+        </div>
+      </div>
+
+      <p class="cta-inline">
+        まずは、<strong>今の家計のモヤモヤを整理するところから</strong>一緒に始めてみませんか？
+        <br />
+        <a href="https://b-book.run/@moneyplan.adviser">無料相談を申し込む</a>
+      </p>
+    </section>
+
+    <!-- Change / future -->
+    <section>
+      <div class="section-header">
+        <div class="section-kicker">FUTURE</div>
+        <h2 class="section-title">
+          お金の不安がやわらいだら、<br />こんな毎日が待っています
+        </h2>
+      </div>
+
+      <div class="change-grid">
+        <div class="change-item">
+          月末に<strong>通帳を何度も確認しなくてよくなる</strong>
+        </div>
+        <div class="change-item">
+          趣味や自分へのご褒美に、<strong>気兼ねなくお金を使える</strong>
+        </div>
+        <div class="change-item">
+          子どもに「高いからやめよう」と<br /><strong>言わなくてすむ</strong>選択が増える
+        </div>
+        <div class="change-item">
+          たまに、少しリッチなランチに<br /><strong>行ける余裕</strong>
+        </div>
+        <div class="change-item">
+          価格より品質や「家族のため」で、<br /><strong>買い物を選べる</strong>
+        </div>
+      </div>
+    </section>
+
+    <!-- Member (placeholder) -->
+    <section>
+      <div class="section-header">
+        <div class="section-kicker">MEMBER</div>
+        <h2 class="section-title">
+          メンバー（お金のプロがわかりやすくお伝えします）
+        </h2>
+      </div>
+      <div class="simple-card">
+        ここに、現状のHPに掲載しているメンバー紹介（プロフィール・顔写真など）をそのまま配置します。
+      </div>
+    </section>
+
+    <!-- Voices -->
+    <section>
+      <div class="section-header">
+        <div class="section-kicker">VOICE</div>
+        <h2 class="section-title">受講された方の声</h2>
+      </div>
+
+      <div class="voice-grid">
+        <div class="voice-card">
+          <div class="voice-meta">40代夫婦</div>
+          <div class="voice-heading">目からウロコが落ちた!</div>
+          <p>
+            ただ節約を教えるのではなく、「使うこと=楽しむこと」を体験しながら、<br />
+            自然と貯まっていく流れを設計してくれるところが、すごく新鮮でした。
+          </p>
+        </div>
+        <div class="voice-card">
+          <div class="voice-meta">40代男性</div>
+          <div class="voice-heading">お金の使い方を見直す!</div>
+          <p>
+            仕組みさえつくってしまえば、考える必要がないという気づきが嬉しかったです。<br />
+            受講中、妻にも青木先生の話を聞いてもらいたくて、思わず妻にも参加してもらい夫婦そろってお聞きしました。
+          </p>
+        </div>
+        <div class="voice-card">
+          <div class="voice-meta">40代女性</div>
+          <div class="voice-heading">正しい使い方を教えてくれた</div>
+          <p>
+            無理な節約はせずに「正しいお金の使い方」を学んで貯蓄する方法を教えてくれます。<br />
+            お金の使い方をアドバイスしてくれる講座は、他にないので新しい気づきがありました。
+          </p>
+        </div>
+        <div class="voice-card">
+          <div class="voice-meta">40代夫婦</div>
+          <div class="voice-heading">現状把握ができた</div>
+          <p>
+            どのくらい損をしているのかが明確になり、プロの視点でアドバイスをもらえたことで、<br />
+            自分だけでは気づけなかったことに気づけました。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Flow -->
+    <section>
+      <div class="section-header">
+        <div class="section-kicker">FLOW</div>
+        <h2 class="section-title">受講の流れ（オンラインセミナー）</h2>
+      </div>
+
+      <div class="flow-grid">
+        <div class="flow-item">
+          <div class="flow-step">STEP 1</div>
+          <div class="flow-title">参加URLで受付</div>
+          <p>
+            開始5分前になったら、申込み完了メールに記載の<br />
+            「参加URL」をクリックしてください。
+          </p>
+        </div>
+        <div class="flow-item">
+          <div class="flow-step">STEP 2</div>
+          <div class="flow-title">好きな場所から参加</div>
+          <p>
+            顔出し不要のZoomです。<br />
+            リラックスしてご参加ください。
+          </p>
+        </div>
+        <div class="flow-item">
+          <div class="flow-step">STEP 3</div>
+          <div class="flow-title">1on1で直接質問</div>
+          <p>
+            不明点は、講師と会話しながら<br />
+            その場で質問できます。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main CTA -->
+    <section>
+      <div class="cta-block">
+        <div class="cta-block-title">
+          将来のお金の不安を、いま整理しておきませんか？
+        </div>
+        <div class="cta-block-text">
+          Family Money Programは、<br />
+          「知っている」で止まっていたお金の知識を、<br />
+          <strong>あなたの暮らしに合った“行動”に変えていくトレーニング</strong>です。
+        </div>
+        <a
+          href="https://b-book.run/@moneyplan.adviser"
+          class="btn btn-primary"
+          >無料相談を申し込む</a
+        >
+        <div class="cta-block-note">
+          ※bookrunの申し込みフォームに遷移します。<br />
+          ご希望の日時を選択し、お申し込みください。
+        </div>
+      </div>
+    </section>
+
+    <!-- Present -->
+    <section id="present">
+      <div class="section-header">
+        <div class="section-kicker">PRESENT</div>
+        <h2 class="section-title">無料プレゼント</h2>
+      </div>
+
+      <div class="present-grid">
+        <div class="card">
+          <h3>無料セミナー参加で、3つの特典</h3>
+          <ul class="present-list">
+            <li>簡単ライフシミュレーション</li>
+            <li>家計診断チェックシート</li>
+            <li>家計簿シート</li>
+          </ul>
+        </div>
+        <div class="card">
+          <p style="font-size: 0.9rem; margin-top: 0">
+            各特典は、以下のツールをベースにしたものです。
+          </p>
+          <p class="present-link">
+            ・簡単ライフシミュレーション：<br />
+            <a
+              href="https://moneyplanadviser.github.io/Auto-calculate-kakei/"
+              target="_blank"
+              rel="noopener noreferrer"
+              >https://moneyplanadviser.github.io/Auto-calculate-kakei/</a
+            >
+          </p>
+          <p class="present-link">
+            ・家計診断チェックシート：<br />
+            <a
+              href="https://moneyplanadviser.github.io/family-money-lp-/"
+              target="_blank"
+              rel="noopener noreferrer"
+              >https://moneyplanadviser.github.io/family-money-lp-/</a
+            >
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section>
+      <div class="section-header">
+        <div class="section-kicker">FAQ</div>
+        <h2 class="section-title">よくある質問</h2>
+      </div>
+
+      <div class="faq-list">
+        <div class="faq-item">
+          <div class="faq-q">
+            将来が不安すぎて、何から手をつければいいかわかりません。
+          </div>
+          <div class="faq-a">
+            安心してください。受講生のほとんどが、同じ悩みからスタートしています。「学ぶ」だけでなく「行動する」ところまで一緒に進めるので、大丈夫です。
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">
+            家計簿が続かないのですが、それでも大丈夫でしょうか。
+          </div>
+          <div class="faq-a">
+            お一人で続けることは、そもそも難しい方が多いです。コーチがサポートするので、ご安心ください。
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">
+            子どもが小さい今から始めても、遅くありませんか。
+          </div>
+          <div class="faq-a">
+            早く始めることも大切ですが、「間違えずに整えること」の方が大事だと考えています。早く始めても続かなければ、不安はなかなか減りません。
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">
+            受講する人の知識や経験レベルはどのくらいですか？
+          </div>
+          <div class="faq-a">
+            お金のことを初めてしっかり学ぶ方から、書籍やマネーセミナー経験者、NISAで投資している方まで、さまざまです。
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">
+            トレーニング時間以外で、わからないことがあったら質問できますか？
+          </div>
+          <div class="faq-a">
+            トレーニング時間外も、LINEで講師に直接質問していただけます。
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">トレーニングは、顔出し必須でしょうか？</div>
+          <div class="faq-a">
+            顔出しは任意です。ご安心ください。
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">時間が取れないかもしれません。</div>
+          <div class="faq-a">
+            手軽に実践できるメール講座もご用意しています。無料相談に申し込まれた方にはご案内しています。
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Other sections placeholders -->
+    <section>
+      <div class="section-header">
+        <div class="section-kicker">ABOUT</div>
+        <h2 class="section-title">Family Moneyについて</h2>
+      </div>
+      <div class="simple-card">
+        ここに、現行HPの「Family Moneyについて」セクションの画像・テキストを配置します。<br />
+        画像4枚（伴走イメージ・家族・安心感など）を並べるデザインも可能です。
+      </div>
+    </section>
+
+    <section>
+      <div class="section-header">
+        <div class="section-kicker">MEDIA</div>
+        <h2 class="section-title">メディア実績・書籍・協賛・お知らせ</h2>
+      </div>
+      <div class="simple-card">
+        現行HPの「メディア実績」「本」「協賛」「お知らせ」の内容を、<br />
+        それぞれカード型で配置する想定です。
+      </div>
+    </section>
+
+    <section>
+      <div class="section-header">
+        <div class="section-kicker">CONTACT</div>
+        <h2 class="section-title">お問い合わせ</h2>
+      </div>
+      <div class="simple-card">
+        現行HPの「お問い合わせ」セクションをそのまま配置します。<br />
+        別フォームに遷移するボタン、またはメールアドレスを掲載。
+      </div>
+    </section>
+
+    <section>
+      <div class="section-header">
+        <div class="section-kicker">LINKS</div>
+        <h2 class="section-title">リンク集・SNSリンク</h2>
+      </div>
+      <div class="simple-card">
+        現行HPの「リンク集」「SNSリンク」を、アイコン付きのリンク一覧で掲載します。
+      </div>
+    </section>
+
+    <footer>
+      <span>© Family Money Program.</span>
+      <span>家族の暮らしと未来を守る、お金の伴走パートナー</span>
+    </footer>
+  </div>
+</body>
+</html>
