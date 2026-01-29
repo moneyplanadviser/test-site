@@ -495,6 +495,21 @@
       color: var(--primary);
     }
 
+    .learn-first-step {
+      margin: 0 0 12px;
+      padding: 12px 14px;
+      background: #fff9f0;
+      border: 1px solid #ffe0a6;
+      border-radius: 10px;
+      font-size: 0.9rem;
+      line-height: 1.7;
+      color: var(--text);
+    }
+
+    .learn-first-step strong {
+      color: var(--primary-dark);
+    }
+
     .feature-list {
       margin: 6px 0 0;
       padding-left: 18px;
@@ -579,7 +594,7 @@
 
     .flow-grid {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 14px 20px;
     }
 
@@ -603,6 +618,83 @@
     .flow-title {
       font-weight: 600;
       margin-bottom: 4px;
+    }
+
+    /* 講師から一言・動画メッセージ */
+    .message-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
+      gap: 24px;
+      align-items: start;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .message-quote-card {
+      background: #ffffff;
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      border: 1px solid #edf0f6;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+    }
+
+    .message-quote-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      color: var(--primary);
+      margin-bottom: 12px;
+    }
+
+    .message-quote-text {
+      font-size: 0.95rem;
+      line-height: 1.8;
+      color: var(--text);
+      margin: 0;
+    }
+
+    .message-video-wrap {
+      position: relative;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      background: linear-gradient(135deg, #fdfcfa 0%, #f5f4f2 100%);
+      border: 1px solid #e8e6e3;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+    }
+
+    .message-video-placeholder {
+      aspect-ratio: 16 / 9;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      padding: 24px;
+      color: var(--muted);
+    }
+
+    .message-video-placeholder-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: rgba(201, 162, 39, 0.15);
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+    }
+
+    .message-video-placeholder-text {
+      font-size: 0.88rem;
+      text-align: center;
+      line-height: 1.5;
+    }
+
+    .message-video-placeholder-note {
+      font-size: 0.78rem;
+      color: var(--muted);
+      opacity: 0.9;
     }
 
     .faq-list {
@@ -1427,7 +1519,8 @@
       .voice-grid,
       .flow-grid,
       .faq-list,
-      .present-grid {
+      .present-grid,
+      .message-grid {
         grid-template-columns: minmax(0, 1fr);
       }
     }
@@ -1488,7 +1581,7 @@
         </div>
       </div>
       <div class="header-cta">
-        <span class="header-badge">累計受講者150名以上／満足度98%／初月で平均2.5万円の家計改善</span>
+        <span class="header-badge">累計受講者150名以上／満足度98%／初月で平均3万円の家計改善</span>
         <a
           href="https://b-book.run/@moneyplan.adviser"
           class="btn btn-outline"
@@ -1701,6 +1794,7 @@
       <div class="learn-layout">
         <div class="card">
           <h3>一人ひとりに合わせた進め方</h3>
+          <p class="learn-first-step">まずは現在地を一緒に確認するために、<strong>家計の棚卸しシートを一緒に埋めます</strong>。そこから無理のないアクションを決めていきます。</p>
           <ul class="learn-list">
             <li>フィードバックがあるから、ひとりより続けやすい</li>
             <li>支出をきちんと把握し、あなたの状況に合わせたアドバイスを受けられる</li>
@@ -1797,7 +1891,7 @@
           <div class="stat-label">受講満足度</div>
         </div>
         <div class="stat-item">
-          <div class="stat-number">2.5万円</div>
+          <div class="stat-number">3万円</div>
           <div class="stat-label">平均月間改善額</div>
         </div>
         <div class="stat-item">
@@ -1832,26 +1926,53 @@
       </div>
     </section>
 
+    <section id="message">
+      <div class="section-header">
+        <div class="section-kicker">MESSAGE</div>
+        <h2 class="section-title">講師から一言</h2>
+        <p class="section-subtitle">人柄と想いが伝わる動画メッセージ</p>
+      </div>
+      <div class="message-grid">
+        <div class="message-quote-card">
+          <div class="message-quote-label">青木より</div>
+          <p class="message-quote-text">「お金の不安は、ひとりで抱えなくて大丈夫です。一緒に整理して、無理のないペースで進めていきましょう。まずはお話を聞かせてください。」</p>
+        </div>
+        <div class="message-video-wrap">
+          <div class="message-video-placeholder" id="instructor-video-area">
+            <div class="message-video-placeholder-icon">▶</div>
+            <span class="message-video-placeholder-text">動画メッセージを掲載予定</span>
+            <span class="message-video-placeholder-note">30秒程度のご挨拶動画をここに配置できます</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section id="flow">
       <div class="section-header">
         <div class="section-kicker">FLOW</div>
         <h2 class="section-title">受講の流れ</h2>
+        <p class="section-subtitle">申込から伴走型フォローまで</p>
       </div>
       <div class="flow-grid">
         <div class="flow-item">
-          <div class="flow-step">STEP 1</div>
-          <div class="flow-title">参加URLで受付</div>
-          <p>開始5分前になったら、申込み完了メールに記載の「参加URL」をクリックしてください。</p>
+          <div class="flow-step">1</div>
+          <div class="flow-title">申込</div>
+          <p>無料相談フォームからお申し込みください。</p>
         </div>
         <div class="flow-item">
-          <div class="flow-step">STEP 2</div>
-          <div class="flow-title">好きな場所から参加</div>
-          <p>顔出し不要のZoomです。リラックスしてご参加ください。</p>
+          <div class="flow-step">2</div>
+          <div class="flow-title">初回面談</div>
+          <p>約2時間で現状を全て把握します。まずは家計の棚卸しシートを一緒に埋めて、現在地を確認。Zoom・顔出し不要でお気軽に。</p>
         </div>
         <div class="flow-item">
-          <div class="flow-step">STEP 3</div>
-          <div class="flow-title">1on1で直接質問</div>
-          <p>不明点は、講師と会話しながらその場で質問できます。</p>
+          <div class="flow-step">3</div>
+          <div class="flow-title">1ヶ月後のフォロー</div>
+          <p>振り返り、アクション整理、次回までのTODOを一緒に整理します。</p>
+        </div>
+        <div class="flow-item">
+          <div class="flow-step">4</div>
+          <div class="flow-title">2ヶ月後〜</div>
+          <p>以降も同様にフォローを継続。無理のないペースで伴走します。</p>
         </div>
       </div>
     </section>
