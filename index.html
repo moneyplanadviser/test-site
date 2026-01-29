@@ -594,8 +594,24 @@
 
     .flow-grid {
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
+      grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 14px 20px;
+    }
+
+    .flow-detail-link-wrap {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .flow-detail-link {
+      font-size: 0.9rem;
+      color: var(--primary);
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .flow-detail-link:hover {
+      text-decoration: underline;
     }
 
     .flow-item {
@@ -1955,26 +1971,22 @@
       </div>
       <div class="flow-grid">
         <div class="flow-item">
-          <div class="flow-step">1</div>
-          <div class="flow-title">申込</div>
-          <p>無料相談フォームからお申し込みください。</p>
+          <div class="flow-step">STEP 1</div>
+          <div class="flow-title">参加URLで受付</div>
+          <p>開始5分前になったら、申込み完了メールに記載の「参加URL」をクリックしてください。</p>
         </div>
         <div class="flow-item">
-          <div class="flow-step">2</div>
-          <div class="flow-title">初回面談</div>
-          <p>約2時間で現状を全て把握します。まずは家計の棚卸しシートを一緒に埋めて、現在地を確認。Zoom・顔出し不要でお気軽に。</p>
+          <div class="flow-step">STEP 2</div>
+          <div class="flow-title">好きな場所から参加</div>
+          <p>顔出し不要のZoomです。リラックスしてご参加ください。</p>
         </div>
         <div class="flow-item">
-          <div class="flow-step">3</div>
-          <div class="flow-title">1ヶ月後のフォロー</div>
-          <p>振り返り、アクション整理、次回までのTODOを一緒に整理します。</p>
-        </div>
-        <div class="flow-item">
-          <div class="flow-step">4</div>
-          <div class="flow-title">2ヶ月後〜</div>
-          <p>以降も同様にフォローを継続。無理のないペースで伴走します。</p>
+          <div class="flow-step">STEP 3</div>
+          <div class="flow-title">1on1で直接質問</div>
+          <p>不明点は、講師と会話しながらその場で質問できます。</p>
         </div>
       </div>
+      <p class="flow-detail-link-wrap"><a href="flow.html" class="flow-detail-link">受講の流れの詳細（申込〜フォローまで）を見る</a></p>
     </section>
 
     <section id="pricing">
