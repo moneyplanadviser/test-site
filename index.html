@@ -1055,15 +1055,9 @@
     }
 
     .member-sns {
-      margin-top: 16px;
-      padding-top: 14px;
+      margin-top: 14px;
+      padding-top: 12px;
       border-top: 1px solid #edf0f6;
-    }
-
-    .member-sns-label {
-      font-size: 0.78rem;
-      color: var(--muted);
-      margin-bottom: 8px;
     }
 
     .member-sns-links {
@@ -1089,6 +1083,25 @@
     .member-sns-links a:hover {
       background: #eaf4ef;
       text-decoration: none;
+    }
+
+    .member-message {
+      margin-top: 32px;
+      padding-top: 28px;
+      border-top: 1px solid #e1e4eb;
+    }
+
+    .member-message-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text);
+      margin: 0 0 4px;
+    }
+
+    .member-message-subtitle {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin: 0 0 20px;
     }
 
     /* Apply Section */
@@ -1466,6 +1479,7 @@
       font-weight: 700;
       color: var(--primary);
       line-height: 1.2;
+      white-space: nowrap;
     }
 
     .pricing-price small {
@@ -2104,7 +2118,6 @@
             <span>JEUGIAカルチャーセンター 認定講師</span>
           </div>
           <div class="member-sns">
-            <div class="member-sns-label">発信しているSNS</div>
             <div class="member-sns-links">
               <a href="https://note.com/familymoney" target="_blank" rel="noopener">note</a>
               <a href="https://x.com/kakei_adviser_" target="_blank" rel="noopener">X</a>
@@ -2117,24 +2130,20 @@
           </div>
         </div>
       </div>
-    </section>
-
-    <section id="message">
-      <div class="section-header">
-        <div class="section-kicker">MESSAGE</div>
-        <h2 class="section-title">講師から一言</h2>
-        <p class="section-subtitle">人柄と想いが伝わる動画メッセージ</p>
-      </div>
-      <div class="message-grid">
-        <div class="message-quote-card">
-          <div class="message-quote-label">青木より</div>
-          <p class="message-quote-text">「お金の不安は、ひとりで抱えなくて大丈夫です。一緒に整理して、無理のないペースで進めていきましょう。まずはお話を聞かせてください。」</p>
-        </div>
-        <div class="message-video-wrap">
-          <div class="message-video-placeholder" id="instructor-video-area">
-            <div class="message-video-placeholder-icon">▶</div>
-            <span class="message-video-placeholder-text">動画メッセージを掲載予定</span>
-            <span class="message-video-placeholder-note">30秒程度のご挨拶動画をここに配置できます</span>
+      <div class="member-message">
+        <h3 class="member-message-title">講師から一言</h3>
+        <p class="member-message-subtitle">人柄と想いが伝わる動画メッセージ</p>
+        <div class="message-grid">
+          <div class="message-quote-card">
+            <div class="message-quote-label">青木より</div>
+            <p class="message-quote-text">「お金の不安は、ひとりで抱えなくて大丈夫です。一緒に整理して、無理のないペースで進めていきましょう。まずはお話を聞かせてください。」</p>
+          </div>
+          <div class="message-video-wrap">
+            <div class="message-video-placeholder" id="instructor-video-area">
+              <div class="message-video-placeholder-icon">▶</div>
+              <span class="message-video-placeholder-text">動画メッセージを掲載予定</span>
+              <span class="message-video-placeholder-note">30秒程度のご挨拶動画をここに配置できます</span>
+            </div>
           </div>
         </div>
       </div>
