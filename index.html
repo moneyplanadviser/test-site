@@ -79,6 +79,11 @@
       box-shadow: 0 2px 10px rgba(0,0,0,0.08);
     }
 
+    /* ページ内リンクで飛んだとき、固定ヘッダーに隠れないように余白を確保 */
+    section[id] {
+      scroll-margin-top: 100px;
+    }
+
     .site-header .page-header-inner {
       max-width: var(--max-width);
       margin: 0 auto;
@@ -875,9 +880,26 @@
 
     .present-grid {
       display: grid;
-      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1.8fr);
+      grid-template-columns: 1fr;
       gap: 20px;
       align-items: start;
+    }
+
+    /* お申し込みいただいた方にプレゼント：このブロックだけ横いっぱい */
+    .present-gift-block {
+      width: 100%;
+      max-width: 100%;
+      grid-column: 1 / -1;
+    }
+
+    .present-grid .card:first-child {
+      max-width: none;
+    }
+
+    .present-cta-card {
+      text-align: center;
+      max-width: 560px;
+      margin: 0 auto;
     }
 
     .present-list {
@@ -2127,8 +2149,9 @@
         <p class="present-limited-badge">※無料面談お申し込みの方限定</p>
       </div>
       <div class="present-grid">
-        <div class="card">
-          <h3>お申し込みいただいた方にプレゼント</h3>
+        <div class="present-gift-block">
+          <div class="card">
+            <h3>お申し込みいただいた方にプレゼント</h3>
           <p>無料面談にお申し込みいただいた方に、以下の特典をお渡しします（申し込み後にお伝えします）。</p>
           <div class="present-items">
             <div class="present-item">
@@ -2146,8 +2169,9 @@
               </div>
             </div>
           </div>
+          </div>
         </div>
-        <div class="card">
+        <div class="card present-cta-card">
           <p>「うちの家計も見てもらいたい」と思われた方は、下記の無料面談お申し込みフォームから、お気軽にご参加ください。特典はお申し込み後にご案内します。</p>
           <div class="cta-inline">
             <a href="#apply" class="btn btn-primary">申し込みフォームへ</a>
