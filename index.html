@@ -691,10 +691,198 @@
       border-radius: var(--radius-md);
     }
 
+    /* Company Section */
+    .company-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .company-image-placeholder {
+      aspect-ratio: 1;
+      background: linear-gradient(135deg, #e8f5e9, #f1f8e9);
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--primary);
+      font-size: 0.85rem;
+    }
+
+    /* Media Section */
+    .media-list {
+      background: #ffffff;
+      border-radius: var(--radius-md);
+      padding: 16px 20px;
+      border: 1px solid #edf0f6;
+    }
+
+    .media-item {
+      padding: 12px 0;
+      border-bottom: 1px solid #edf0f6;
+    }
+
+    .media-item:last-child {
+      border-bottom: none;
+    }
+
+    .media-placeholder {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    /* Books Section */
+    .books-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 20px;
+    }
+
+    .book-item {
+      text-align: center;
+    }
+
+    .book-cover-placeholder {
+      aspect-ratio: 3/4;
+      background: linear-gradient(135deg, #fff7e9, #fffaf0);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent);
+      font-size: 0.85rem;
+      margin-bottom: 8px;
+      border: 1px solid #ffe0a6;
+    }
+
+    .book-title {
+      font-size: 0.85rem;
+      margin: 0;
+    }
+
+    /* Sponsors Section */
+    .sponsors-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .sponsor-placeholder {
+      width: 150px;
+      height: 60px;
+      background: #ffffff;
+      border-radius: 8px;
+      border: 1px solid #edf0f6;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--muted);
+      font-size: 0.8rem;
+    }
+
+    /* News Section */
+    .news-list {
+      background: #ffffff;
+      border-radius: var(--radius-md);
+      padding: 8px 20px;
+      border: 1px solid #edf0f6;
+    }
+
+    .news-item {
+      display: flex;
+      gap: 16px;
+      padding: 12px 0;
+      border-bottom: 1px solid #edf0f6;
+      font-size: 0.9rem;
+    }
+
+    .news-item:last-child {
+      border-bottom: none;
+    }
+
+    .news-date {
+      color: var(--primary);
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    .news-text {
+      color: var(--text);
+    }
+
+    /* Footer */
+    .footer-content {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .footer-logo {
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--primary);
+    }
+
+    .footer-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .footer-nav a {
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 12px;
+    }
+
+    .social-link {
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: #eaf4ef;
+      font-size: 0.8rem;
+      color: var(--primary);
+    }
+
+    .footer-bottom {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      justify-content: space-between;
+      padding-top: 16px;
+      border-top: 1px solid #e1e4eb;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 16px;
+    }
+
+    .footer-links a {
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+
     @media (max-width: 900px) {
+      .company-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
       .member-card {
         flex-direction: column;
         text-align: center;
+      }
+
+      .footer-content {
+        flex-direction: column;
+        align-items: flex-start;
       }
       .hero {
         grid-template-columns: minmax(0, 1fr);
@@ -1132,6 +1320,83 @@
       </div>
     </section>
 
+    <section id="company">
+      <div class="section-header">
+        <div class="section-kicker">ABOUT US</div>
+        <h2 class="section-title">Family Moneyについて</h2>
+      </div>
+      <div class="company-grid">
+        <div class="company-image-placeholder">イメージ画像1</div>
+        <div class="company-image-placeholder">イメージ画像2</div>
+        <div class="company-image-placeholder">イメージ画像3</div>
+        <div class="company-image-placeholder">イメージ画像4</div>
+      </div>
+      <div class="card" style="margin-top: 20px;">
+        <p>Family Moneyは、「家族のお金の不安をなくす」をミッションに、伴走型のお金のトレーニングを提供しています。知識だけでなく、行動につなげるサポートを大切にしています。</p>
+      </div>
+    </section>
+
+    <section id="media">
+      <div class="section-header">
+        <div class="section-kicker">MEDIA</div>
+        <h2 class="section-title">メディア実績</h2>
+      </div>
+      <div class="media-list">
+        <div class="media-item">
+          <span class="media-placeholder">メディア掲載実績をここに追加</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="books">
+      <div class="section-header">
+        <div class="section-kicker">BOOKS</div>
+        <h2 class="section-title">書籍</h2>
+      </div>
+      <div class="books-grid">
+        <div class="book-item">
+          <div class="book-cover-placeholder">書籍カバー</div>
+          <p class="book-title">書籍タイトルをここに追加</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="sponsors">
+      <div class="section-header">
+        <div class="section-kicker">SPONSORS</div>
+        <h2 class="section-title">協賛</h2>
+      </div>
+      <div class="sponsors-grid">
+        <div class="sponsor-placeholder">協賛企業ロゴ</div>
+      </div>
+    </section>
+
+    <section id="news">
+      <div class="section-header">
+        <div class="section-kicker">NEWS</div>
+        <h2 class="section-title">お知らせ</h2>
+      </div>
+      <div class="news-list">
+        <div class="news-item">
+          <span class="news-date">2026.01.29</span>
+          <span class="news-text">ホームページをリニューアルしました</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="section-header">
+        <div class="section-kicker">CONTACT</div>
+        <h2 class="section-title">お問い合わせ</h2>
+      </div>
+      <div class="card">
+        <p>サービスに関するご質問・お問い合わせは、下記よりお気軽にご連絡ください。</p>
+        <div class="cta-inline">
+          <a href="https://b-book.run/@moneyplan.adviser" class="btn btn-outline">お問い合わせはこちら</a>
+        </div>
+      </div>
+    </section>
+
     <!-- 最終CTA -->
     <div class="cta-block">
       <div class="cta-block-title">まずは無料相談から始めてみませんか？</div>
@@ -1144,9 +1409,26 @@
     </div>
 
     <footer>
-      <div>&copy; 2026 Family Money Program. All rights reserved.</div>
-      <div>
-        <a href="https://b-book.run/@moneyplan.adviser">無料相談</a>
+      <div class="footer-content">
+        <div class="footer-logo">Family Money Program</div>
+        <nav class="footer-nav">
+          <a href="#about">サービス概要</a>
+          <a href="#flow">受講の流れ</a>
+          <a href="#faq">よくある質問</a>
+          <a href="#contact">お問い合わせ</a>
+        </nav>
+        <div class="footer-social">
+          <a href="#" class="social-link">Twitter</a>
+          <a href="#" class="social-link">Instagram</a>
+          <a href="#" class="social-link">LINE</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>&copy; 2026 Family Money Program. All rights reserved.</div>
+        <div class="footer-links">
+          <a href="#">プライバシーポリシー</a>
+          <a href="#">特定商取引法に基づく表記</a>
+        </div>
       </div>
     </footer>
 
