@@ -598,9 +598,16 @@
       gap: 14px 20px;
     }
 
+    .flow-detail-note {
+      text-align: center;
+      margin: 20px 0 6px;
+      font-size: 0.82rem;
+      color: var(--muted);
+    }
+
     .flow-detail-link-wrap {
       text-align: center;
-      margin-top: 20px;
+      margin-top: 0;
     }
 
     .flow-detail-link {
@@ -877,6 +884,55 @@
       margin: 10px 0 0;
       padding-left: 18px;
       font-size: 0.9rem;
+    }
+
+    .present-items {
+      margin-top: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .present-item {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      padding: 12px;
+      background: #fafaf8;
+      border-radius: 12px;
+      border: 1px solid #edf0f6;
+    }
+
+    .present-item-preview {
+      flex-shrink: 0;
+      width: 120px;
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid #e8e6e3;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
+
+    .present-item-preview img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .present-item-text {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .present-item-text strong {
+      display: block;
+      font-size: 0.95rem;
+      margin-bottom: 4px;
+      color: var(--text);
+    }
+
+    .present-item-text .present-link {
+      font-size: 0.82rem;
+      color: var(--muted);
     }
 
     .present-link {
@@ -1539,6 +1595,16 @@
       .message-grid {
         grid-template-columns: minmax(0, 1fr);
       }
+
+      .present-item {
+        flex-direction: column;
+      }
+
+      .present-item-preview {
+        width: 100%;
+        max-width: 280px;
+        margin: 0 auto;
+      }
     }
 
     @media (max-width: 640px) {
@@ -1986,7 +2052,8 @@
           <p>不明点は、講師と会話しながらその場で質問できます。</p>
         </div>
       </div>
-      <p class="flow-detail-link-wrap"><a href="flow.html" class="flow-detail-link">受講の流れの詳細（申込〜フォローまで）を見る</a></p>
+      <p class="flow-detail-note">まずは無料相談から。相談のあと、どんな流れになるか気になる方だけ、下記からご覧いただけます。</p>
+      <p class="flow-detail-link-wrap"><a href="flow.html" class="flow-detail-link">無料相談のあとの流れを見る</a></p>
     </section>
 
     <section id="pricing">
@@ -2063,10 +2130,22 @@
         <div class="card">
           <h3>お申し込みいただいた方にプレゼント</h3>
           <p>無料面談にお申し込みいただいた方に、以下の特典をお渡しします（申し込み後にお伝えします）。</p>
-          <ul class="present-list">
-            <li><strong>簡単ライフシミュレーション</strong><br><span class="present-link">将来の収支を簡単にシミュレーション</span></li>
-            <li><strong>家計診断チェックシート</strong><br><span class="present-link">今の家計の状態をセルフチェック</span></li>
-          </ul>
+          <div class="present-items">
+            <div class="present-item">
+              <div class="present-item-preview"><img src="images/present/life-simulation.png" alt="簡単ライフシミュレーションのイメージ（チラ見せ）" /></div>
+              <div class="present-item-text">
+                <strong>簡単ライフシミュレーション</strong>
+                <span class="present-link">将来の収支を簡単にシミュレーション。毎月の家計から「いま」と「30年先」のイメージをざっくり確認できます。</span>
+              </div>
+            </div>
+            <div class="present-item">
+              <div class="present-item-preview"><img src="images/present/kakei-diagnosis.png" alt="家計診断チェックシートのイメージ（チラ見せ）" /></div>
+              <div class="present-item-text">
+                <strong>家計診断チェックシート</strong>
+                <span class="present-link">今の家計の状態をセルフチェック。お金の見える化など、当てはまる項目にチェックを入れて診断できます。</span>
+              </div>
+            </div>
+          </div>
         </div>
         <div class="card">
           <p>「うちの家計も見てもらいたい」と思われた方は、下記の無料面談お申し込みフォームから、お気軽にご参加ください。特典はお申し込み後にご案内します。</p>
