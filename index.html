@@ -67,6 +67,25 @@
       padding: 24px 20px 72px;
     }
 
+    /* Fixed Header */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 99;
+      background: var(--white);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    }
+
+    .site-header .page-header-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 12px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
     header {
       display: flex;
       align-items: center;
@@ -878,13 +897,107 @@
       padding: 10px 16px;
       font-size: 0.9rem;
       font-weight: 600;
-      position: sticky;
-      top: 0;
-      z-index: 100;
     }
 
     .urgency-banner strong {
       color: #ffeb3b;
+    }
+
+    .urgency-banner .deadline {
+      display: inline-block;
+      background: rgba(255,255,255,0.2);
+      padding: 2px 8px;
+      border-radius: 4px;
+      margin-left: 8px;
+      font-size: 0.8rem;
+    }
+
+    /* Page Navigation */
+    .page-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: center;
+      padding: 16px 20px;
+      background: var(--white);
+      border-bottom: 1px solid #edf0f6;
+    }
+
+    .page-nav a {
+      font-size: 0.8rem;
+      color: var(--muted);
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: var(--bg);
+      transition: all 0.2s;
+    }
+
+    .page-nav a:hover {
+      background: var(--primary);
+      color: var(--white);
+      text-decoration: none;
+    }
+
+    /* Floating CTA */
+    .floating-cta {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 90;
+    }
+
+    .floating-cta .btn {
+      box-shadow: 0 4px 20px rgba(45, 106, 79, 0.4);
+    }
+
+    /* Pricing Section */
+    .pricing-card {
+      background: linear-gradient(135deg, #ffffff, #f8fdf9);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      border: 2px solid var(--primary);
+      text-align: center;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    .pricing-label {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+
+    .pricing-price {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--primary);
+      line-height: 1.2;
+    }
+
+    .pricing-price small {
+      font-size: 1rem;
+      font-weight: 400;
+    }
+
+    .pricing-note {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-top: 8px;
+    }
+
+    .pricing-features {
+      margin: 20px 0;
+      text-align: left;
+    }
+
+    .pricing-features li {
+      padding: 8px 0;
+      border-bottom: 1px solid #edf0f6;
+      font-size: 0.9rem;
+    }
+
+    .pricing-features li:last-child {
+      border-bottom: none;
     }
 
     /* Before/After Section */
@@ -1095,11 +1208,30 @@
   </style>
 </head>
 <body>
-  <div class="urgency-banner">
-    【2月限定】無料相談 <strong>先着5名様</strong> に特典プレゼント中
+  <!-- Fixed Header -->
+  <div class="site-header">
+    <div class="urgency-banner">
+      無料相談 <strong>先着5名様</strong> 限定で特典プレゼント<span class="deadline">2/28(金)まで</span>
+    </div>
+    <div class="page-header-inner">
+      <div>
+        <div class="logo">Family Money Program</div>
+      </div>
+      <a href="#apply" class="btn btn-primary">無料相談を予約</a>
+    </div>
+    <nav class="page-nav">
+      <a href="#problems">お悩み</a>
+      <a href="#about">サービス内容</a>
+      <a href="#changes">Before/After</a>
+      <a href="#voices">受講者の声</a>
+      <a href="#pricing">料金</a>
+      <a href="#flow">受講の流れ</a>
+      <a href="#faq">FAQ</a>
+    </nav>
   </div>
+
   <div class="page">
-    <header>
+    <header style="display:none;">
       <div>
         <div class="logo">Family Money Program</div>
         <div class="tagline">
@@ -1443,6 +1575,32 @@
       </div>
     </section>
 
+    <section id="pricing">
+      <div class="section-header">
+        <div class="section-kicker">PRICING</div>
+        <h2 class="section-title">料金について</h2>
+        <p class="section-subtitle">まずは無料相談からスタート</p>
+      </div>
+      <div class="pricing-card">
+        <div class="pricing-label">初回限定</div>
+        <div class="pricing-price">無料<small>（60分）</small></div>
+        <div class="pricing-note">通常 5,500円 → 今だけ0円</div>
+        <ul class="pricing-features">
+          <li>✓ 現在の家計状況のヒアリング</li>
+          <li>✓ 課題の整理とアドバイス</li>
+          <li>✓ 今後の進め方のご提案</li>
+          <li>✓ 質疑応答</li>
+        </ul>
+        <a href="#apply" class="btn btn-primary">無料相談を予約する</a>
+        <p class="pricing-note" style="margin-top: 16px;">※継続プログラムは無料相談後にご案内します<br>（月額 9,800円〜 / 途中解約OK）</p>
+      </div>
+      <div class="risk-reversal" style="margin-top: 24px;">
+        <div class="risk-item">強引な勧誘なし</div>
+        <div class="risk-item">相談だけでもOK</div>
+        <div class="risk-item">その場で断ってOK</div>
+      </div>
+    </section>
+
     <section id="faq">
       <div class="section-header">
         <div class="section-kicker">FAQ</div>
@@ -1644,5 +1802,39 @@
     </footer>
 
   </div>
+
+  <!-- Floating CTA (モバイル用) -->
+  <div class="floating-cta" style="display: none;">
+    <a href="#apply" class="btn btn-primary">無料相談を予約</a>
+  </div>
+
+  <style>
+    @media (max-width: 640px) {
+      .floating-cta {
+        display: block !important;
+        left: 20px;
+        right: 20px;
+        bottom: 16px;
+      }
+      .floating-cta .btn {
+        width: 100%;
+        padding: 16px;
+        font-size: 1rem;
+      }
+      .page {
+        padding-bottom: 100px;
+      }
+      .page-nav {
+        display: none;
+      }
+      .site-header .page-header-inner {
+        padding: 8px 16px;
+      }
+      .site-header .btn {
+        padding: 8px 16px;
+        font-size: 0.85rem;
+      }
+    }
+  </style>
 </body>
 </html>
