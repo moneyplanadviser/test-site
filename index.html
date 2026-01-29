@@ -997,13 +997,32 @@
     /* Member Section */
     .member-card {
       display: flex;
-      gap: 24px;
-      align-items: center;
+      flex-direction: column;
+      gap: 0;
       background: #ffffff;
       border-radius: var(--radius-lg);
       padding: 24px;
       border: 1px solid #edf0f6;
       box-shadow: var(--shadow-soft);
+    }
+
+    .member-profile-row {
+      display: flex;
+      gap: 24px;
+      align-items: center;
+    }
+
+    .member-card-video {
+      margin-top: 24px;
+      padding-top: 20px;
+      border-top: 1px solid #edf0f6;
+    }
+
+    .member-card-video-label {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 12px;
     }
 
     .member-avatar {
@@ -1467,7 +1486,10 @@
 
     .pricing-card--primary {
       border-color: var(--accent);
+      border-width: 2px;
       padding: 32px 24px;
+      background: linear-gradient(135deg, #fefbf5 0%, #fdf8ef 50%, #faf6ed 100%);
+      box-shadow: 0 4px 20px rgba(244, 162, 97, 0.12);
     }
 
     .pricing-card--primary .pricing-price {
@@ -1686,9 +1708,13 @@
         grid-template-columns: repeat(2, 1fr);
       }
 
-      .member-card {
+      .member-profile-row {
         flex-direction: column;
         text-align: center;
+      }
+
+      .member-profile-row .member-sns-links {
+        justify-content: center;
       }
 
       .footer-content {
@@ -2115,33 +2141,32 @@
         <p class="section-subtitle">Family Moneyは、ご家族のお金のお悩みに特化したサービスです</p>
       </div>
       <div class="member-card">
-        <div class="member-avatar">
-          <div class="member-avatar-placeholder">PHOTO</div>
-        </div>
-        <div class="member-info">
-          <div class="member-name">青木 計太</div>
-          <div class="member-title">代表取締役</div>
-          <p class="member-desc">家計・資産運用・ライフプランニング領域で多数の実績を出したスペシャリスト。「知識」だけでなく「行動」につなげるサポートを大切にしています。</p>
-          <div class="member-credential">
-            <span>JEUGIAカルチャーセンター 認定講師</span>
+        <div class="member-profile-row">
+          <div class="member-avatar">
+            <div class="member-avatar-placeholder">PHOTO</div>
           </div>
-          <div class="member-sns">
-            <div class="member-sns-links">
-              <a href="https://note.com/familymoney" target="_blank" rel="noopener">note</a>
-              <a href="https://x.com/kakei_adviser_" target="_blank" rel="noopener">X</a>
-              <a href="https://www.instagram.com/keita.familymoney?igsh=MWI5czg0b3FmdjMwcg%3D%3D&utm_source=qr" target="_blank" rel="noopener">Instagram</a>
-              <a href="https://www.facebook.com/FamilyyMoney/" target="_blank" rel="noopener">Facebook</a>
-              <a href="https://www.threads.com/@keita.familymoney" target="_blank" rel="noopener">Threads</a>
-              <a href="https://mixi.social/@keita_moneyplan" target="_blank" rel="noopener">mixi</a>
-              <a href="https://ameblo.jp/money-adviser/" target="_blank" rel="noopener">Ameblo</a>
+          <div class="member-info">
+            <div class="member-name">青木 計太</div>
+            <div class="member-title">代表取締役</div>
+            <p class="member-desc">家計・資産運用・ライフプランニング領域で多数の実績を出したスペシャリスト。「知識」だけでなく「行動」につなげるサポートを大切にしています。</p>
+            <div class="member-credential">
+              <span>JEUGIAカルチャーセンター 認定講師</span>
+            </div>
+            <div class="member-sns">
+              <div class="member-sns-links">
+                <a href="https://note.com/familymoney" target="_blank" rel="noopener">note</a>
+                <a href="https://x.com/kakei_adviser_" target="_blank" rel="noopener">X</a>
+                <a href="https://www.instagram.com/keita.familymoney?igsh=MWI5czg0b3FmdjMwcg%3D%3D&utm_source=qr" target="_blank" rel="noopener">Instagram</a>
+                <a href="https://www.facebook.com/FamilyyMoney/" target="_blank" rel="noopener">Facebook</a>
+                <a href="https://www.threads.com/@keita.familymoney" target="_blank" rel="noopener">Threads</a>
+                <a href="https://mixi.social/@keita_moneyplan" target="_blank" rel="noopener">mixi</a>
+                <a href="https://ameblo.jp/money-adviser/" target="_blank" rel="noopener">Ameblo</a>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="member-message">
-        <h3 class="member-message-title">講師から一言</h3>
-        <p class="member-message-subtitle">人柄と想いが伝わる動画メッセージ</p>
-        <div class="message-grid message-grid--video-only">
+        <div class="member-card-video">
+          <div class="member-card-video-label">講師から一言</div>
           <div class="message-video-wrap">
             <div class="message-video-placeholder" id="instructor-video-area">
               <div class="message-video-placeholder-icon">▶</div>
