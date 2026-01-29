@@ -627,7 +627,75 @@
       align-items: center;
     }
 
+    /* Member Section */
+    .member-card {
+      display: flex;
+      gap: 24px;
+      align-items: center;
+      background: #ffffff;
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      border: 1px solid #edf0f6;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .member-avatar {
+      flex-shrink: 0;
+    }
+
+    .member-avatar-placeholder {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #e8f5e9, #f1f8e9);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--primary);
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .member-info {
+      flex: 1;
+    }
+
+    .member-name {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .member-title {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-bottom: 12px;
+    }
+
+    .member-desc {
+      font-size: 0.9rem;
+      margin: 0;
+      line-height: 1.7;
+    }
+
+    /* Apply Section */
+    .apply-frame {
+      background: #ffffff;
+      border-radius: var(--radius-lg);
+      padding: 20px;
+      border: 1px solid #edf0f6;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .apply-frame iframe {
+      border-radius: var(--radius-md);
+    }
+
     @media (max-width: 900px) {
+      .member-card {
+        flex-direction: column;
+        text-align: center;
+      }
       .hero {
         grid-template-columns: minmax(0, 1fr);
         padding: 22px 18px;
@@ -804,6 +872,39 @@
       </div>
     </section>
 
+    <section id="solution">
+      <div class="section-header">
+        <div class="section-kicker">SOLUTION</div>
+        <h2 class="section-title">その悩み、満足度98%の「Family Money Program」なら、一緒に道筋をつけていけます</h2>
+      </div>
+      <div class="card">
+        <p>不安は、あなたが悪いから生まれるわけではありません。</p>
+        <p>「見えない」「相談できる人がいない」「何から手をつければいいかわからない」——その3つが重なると、誰でも不安になります。</p>
+        <p>Family Money Programは、<strong>専属コーチがあなたの家計と向き合い、見える化と計画の"伴走"をする</strong>サービスです。<br>受講生の多くが「将来が不安で何から手をつけていいかわからなかった」という同じ悩みからスタートしています。</p>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="section-header">
+        <div class="section-kicker">ABOUT</div>
+        <h2 class="section-title">「Family Money Program」とは？</h2>
+      </div>
+      <div class="card">
+        <p>「Family Money Program」は、<strong>すぐに暮らしに効く、実践型のお金のトレーニング</strong>です。</p>
+        <ul>
+          <li>家計のことは親にも相談しづらい</li>
+          <li>本やセミナーで「知識」は得たけれど、投資やFPの話だけでは、今の赤字や漠然とした不安は変わらなかった</li>
+        </ul>
+        <p>——そんな「知っているのに現実が変わらない」もやもやを、<strong>専属コーチと一緒に「貯める」「続ける」に落とし込んでいきます</strong>。</p>
+        <p>「貯める」「続ける」が整うと、<strong>将来への不安が「安心」と「自分でできそう」という感覚に変わっていく</strong>——それを、豊かな人生への小さな一歩として支えます。</p>
+      </div>
+      <div class="pill-row">
+        <span>ムリなく続く お金管理のコツ</span>
+        <span>迷わず進める 自分軸で判断</span>
+        <span>未来の安心をつくる 自動貯金体質へ</span>
+      </div>
+    </section>
+
     <section id="recommend">
       <div class="section-header">
         <div class="section-kicker">RECOMMEND</div>
@@ -822,6 +923,44 @@
       </div>
       <div class="cta-inline">
         <a href="https://b-book.run/@moneyplan.adviser" class="btn btn-primary">まずは無料相談を申し込む</a>
+      </div>
+    </section>
+
+    <section id="learn">
+      <div class="section-header">
+        <div class="section-kicker">LEARN</div>
+        <h2 class="section-title">Family Money Programで学べること</h2>
+        <p class="section-subtitle">私たちは、「わかった」で終わらせず、行動に繋げることを大切にしています。</p>
+      </div>
+      <div class="learn-layout">
+        <div class="card">
+          <h3>一人ひとりに合わせた進め方</h3>
+          <ul class="learn-list">
+            <li>フィードバックがあるから、ひとりより続けやすい</li>
+            <li>支出をきちんと把握し、あなたの状況に合わせたアドバイスを受けられる</li>
+            <li>貯めるために必要な行動に絞って、一緒に実践できる</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>よく扱うテーマ例</h3>
+          <ul class="learn-list">
+            <li><span class="learn-strong">ムリしない節約のコツ</span>でお金の流れが見える</li>
+            <li>収入を変えずに<span class="learn-strong">暮らしにゆとりをつくる</span>工夫</li>
+            <li><span class="learn-strong">支出のクセを見直し</span>ムダをスッキリ解消</li>
+            <li><span class="learn-strong">自分らしいお金の使い方</span>の見つけ方</li>
+            <li><span class="learn-strong">教育・住宅・老後に備える</span>お金のバランス術</li>
+          </ul>
+        </div>
+      </div>
+      <div class="card" style="margin-top: 20px;">
+        <h3>Family Money Programの強み</h3>
+        <div class="pill-row">
+          <span>月1回の1on1トレーニング</span>
+          <span>支出の分析・見える化サポート</span>
+          <span>LINEでいつでも相談</span>
+          <span>資産形成のアドバイス</span>
+        </div>
+        <p style="margin-top: 12px;">「わかったつもり」で終わらせず、<strong>行動を通じて、家族を守る土台</strong>をつくります。</p>
       </div>
     </section>
 
@@ -869,6 +1008,24 @@
       </div>
       <div class="cta-inline">
         <a href="https://b-book.run/@moneyplan.adviser" class="btn btn-primary">私も相談してみる</a>
+      </div>
+    </section>
+
+    <section id="member">
+      <div class="section-header">
+        <div class="section-kicker">MEMBER</div>
+        <h2 class="section-title">お金のプロがわかりやすくお伝えします</h2>
+        <p class="section-subtitle">Family Moneyは、ご家族のお金のお悩みに特化したサービスです</p>
+      </div>
+      <div class="member-card">
+        <div class="member-avatar">
+          <div class="member-avatar-placeholder">PHOTO</div>
+        </div>
+        <div class="member-info">
+          <div class="member-name">青木 計太</div>
+          <div class="member-title">代表取締役</div>
+          <p class="member-desc">家計・資産運用・ライフプランニング領域で多数の実績を出したスペシャリスト。「知識」だけでなく「行動」につなげるサポートを大切にしています。</p>
+        </div>
       </div>
     </section>
 
@@ -934,6 +1091,47 @@
       </div>
     </section>
 
+    <section id="present">
+      <div class="section-header">
+        <div class="section-kicker">PRESENT</div>
+        <h2 class="section-title">無料面談ご参加特典</h2>
+      </div>
+      <div class="present-grid">
+        <div class="card">
+          <h3>無料面談にお申し込みいただいた方へ</h3>
+          <p>以下の特典をプレゼントします。</p>
+          <ul class="present-list">
+            <li><a href="https://moneyplanadviser.github.io/Auto-calculate-kakei/">簡単ライフシミュレーション</a><br><span class="present-link">将来の収支を簡単にシミュレーション</span></li>
+            <li><a href="https://moneyplanadviser.github.io/family-money-lp-/">家計診断チェックシート</a><br><span class="present-link">今の家計の状態をセルフチェック</span></li>
+          </ul>
+        </div>
+        <div class="card">
+          <p>「うちの家計も見てもらいたい」と思われた方は、下記の無料面談お申し込みフォームから、お気軽にご参加ください。</p>
+          <div class="cta-inline">
+            <a href="#apply" class="btn btn-primary">申し込みフォームへ</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="apply">
+      <div class="section-header">
+        <div class="section-kicker">APPLY</div>
+        <h2 class="section-title">無料相談お申し込み</h2>
+        <p class="section-subtitle">下記カレンダーからご都合の良い日時をお選びください</p>
+      </div>
+      <div class="apply-frame">
+        <iframe 
+          src="https://b-book.run/@moneyplan.adviser" 
+          width="100%" 
+          height="600" 
+          frameborder="0"
+          loading="lazy"
+          title="無料相談予約フォーム"
+        ></iframe>
+      </div>
+    </section>
+
     <!-- 最終CTA -->
     <div class="cta-block">
       <div class="cta-block-title">まずは無料相談から始めてみませんか？</div>
@@ -941,7 +1139,7 @@
         「何から始めればいいかわからない」その状態のままで大丈夫です。<br />
         専属コーチが、あなたの家計の現状を一緒に整理するところからサポートします。
       </p>
-      <a href="https://b-book.run/@moneyplan.adviser" class="btn btn-primary">無料相談を申し込む</a>
+      <a href="#apply" class="btn btn-primary">無料相談を申し込む</a>
       <p class="cta-block-note">※オンラインで完結。顔出し不要です。</p>
     </div>
 
