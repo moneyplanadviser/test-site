@@ -658,6 +658,11 @@
       margin: 0 auto;
     }
 
+    .message-grid--video-only {
+      grid-template-columns: 1fr;
+      max-width: 560px;
+    }
+
     .message-quote-card {
       background: #ffffff;
       border-radius: var(--radius-lg);
@@ -1445,7 +1450,7 @@
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 20px;
-      align-items: start;
+      align-items: stretch;
     }
 
     .pricing-card {
@@ -1457,6 +1462,7 @@
       display: flex;
       flex-direction: column;
       align-items: center;
+      min-height: 100%;
     }
 
     .pricing-card--primary {
@@ -1496,6 +1502,7 @@
     .pricing-features {
       margin: 20px 0;
       text-align: left;
+      flex: 1;
     }
 
     .pricing-features li {
@@ -1509,7 +1516,8 @@
     }
 
     .pricing-card .btn {
-      margin-top: 8px;
+      margin-top: auto;
+      padding-top: 16px;
       width: 100%;
       max-width: 260px;
     }
@@ -2133,11 +2141,7 @@
       <div class="member-message">
         <h3 class="member-message-title">講師から一言</h3>
         <p class="member-message-subtitle">人柄と想いが伝わる動画メッセージ</p>
-        <div class="message-grid">
-          <div class="message-quote-card">
-            <div class="message-quote-label">青木より</div>
-            <p class="message-quote-text">「お金の不安は、ひとりで抱えなくて大丈夫です。一緒に整理して、無理のないペースで進めていきましょう。まずはお話を聞かせてください。」</p>
-          </div>
+        <div class="message-grid message-grid--video-only">
           <div class="message-video-wrap">
             <div class="message-video-placeholder" id="instructor-video-area">
               <div class="message-video-placeholder-icon">▶</div>
