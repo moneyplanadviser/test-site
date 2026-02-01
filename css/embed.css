@@ -22,7 +22,7 @@ html, body {
   overflow: visible !important;
 }
 
-.fm-embed { width: 100%; }
+.fm-embed { width: 100%; overflow-x: hidden; }
 .fm-embed .page { width: 100%; overflow-x: hidden; }
 
 
