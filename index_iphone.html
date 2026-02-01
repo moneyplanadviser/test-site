@@ -212,14 +212,6 @@
       max-width: 520px;
     }
 
-    .hero-label {
-      font-size: 0.8rem;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: var(--primary-light);
-      margin-bottom: 8px;
-    }
-
     .hero-title-main {
       font-size: 1.9rem;
       font-weight: 700;
@@ -573,8 +565,20 @@
 
     .flow-grid {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 14px 20px;
+      grid-template-columns: 1fr auto 1fr auto 1fr;
+      gap: 14px 8px;
+      align-items: center;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .flow-arrow {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--primary);
+      font-size: 1.25rem;
+      padding: 0 4px;
     }
 
     .flow-item {
@@ -601,8 +605,10 @@
 
     .faq-list {
       display: grid;
-      grid-template-columns: minmax(0, 1.5fr) minmax(0, 1.5fr);
+      grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 14px 20px;
+      max-width: 900px;
+      margin: 0 auto;
     }
 
     .faq-item {
@@ -843,6 +849,16 @@
       border: 1px solid rgba(184, 134, 11, 0.2);
     }
 
+    .blog-cms-content {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .blog-cms-content .blog-fallback {
+      text-align: center;
+      padding: 24px;
+    }
+
     /* Apply Section */
     .apply-frame {
       background: #ffffff;
@@ -868,6 +884,31 @@
       background: linear-gradient(135deg, #fdfcfa, #f5f4f2);
       border-radius: var(--radius-md);
       display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--primary);
+      font-size: 0.85rem;
+    }
+
+    .company-image-box {
+      aspect-ratio: 1;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      background: linear-gradient(135deg, #fdfcfa, #f5f4f2);
+      position: relative;
+    }
+
+    .company-image-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .company-image-box .company-image-fallback {
+      display: none;
+      position: absolute;
+      inset: 0;
       align-items: center;
       justify-content: center;
       color: var(--primary);
@@ -1392,6 +1433,11 @@
       .present-grid {
         grid-template-columns: minmax(0, 1fr);
       }
+
+      .flow-grid .flow-arrow {
+        transform: rotate(90deg);
+        padding: 8px 0;
+      }
     }
 
     @media (max-width: 640px) {
@@ -1449,7 +1495,7 @@
         </div>
       </div>
       <div class="header-cta">
-        <span class="header-badge">累計受講者150名以上／満足度98%／初月で平均2.5万円の家計改善</span>
+        <span class="header-badge">少人数制で手厚く伴走／満足度98%／初月で平均2.5万円の家計改善</span>
         <a
           href="https://b-book.run/@moneyplan.adviser"
           class="btn btn-outline"
@@ -1462,7 +1508,6 @@
     <section class="hero" aria-label="ヒーロー">
       <img src="images/family-money-hero-top.png" alt="リビングで家族が笑顔で話す様子" class="hero-bg-img" width="1080" height="720" loading="eager" />
       <div class="hero-content">
-        <div class="hero-label">TOP</div>
         <h1 class="hero-title-main">
           給料は上がらないのに、<br />物価だけが上がる——
         </h1>
@@ -1476,7 +1521,7 @@
         </p>
         <div class="hero-meta">
           <span class="meta-pill">
-            <span>累計受講者</span><strong>150名以上</strong>
+            <span>少人数制</span><strong>手厚い伴走</strong>
           </span>
           <span class="meta-pill">
             <span>受講満足度</span><strong>98%</strong>
@@ -1538,10 +1583,6 @@
           <div class="problem-icon">•</div>
           <div class="problem-text">市役所や手続きのたびに「こんなにお金がかかるの？」と知って、不安が増えていく</div>
         </div>
-        <div class="problem-item">
-          <div class="problem-icon">•</div>
-          <div class="problem-text">スーパーで同じ買い物をしているだけなのに、1000円台が2000円台になって、このまま本当に大丈夫なのか不安</div>
-        </div>
       </div>
     </section>
 
@@ -1567,7 +1608,7 @@
       <div class="method-card">
         <div class="method-highlight">
           <div class="method-name">1:4:5の法則</div>
-          <p class="method-desc">収入を「貯蓄:生活費:自己投資」に最適配分する独自メソッド。<br>無理な節約ではなく、お金の使い方を変えることで、自然と貯まる仕組みをつくります。</p>
+          <p class="method-desc">収入を「貯蓄:生活費:維持費」に最適配分する独自メソッド。<br>無理な節約ではなく、お金の使い方を変えることで、自然と貯まる仕組みをつくります。</p>
         </div>
         <div class="method-points">
           <div class="method-point">
@@ -1580,7 +1621,7 @@
           </div>
           <div class="method-point">
             <div class="method-point-num">5</div>
-            <div class="method-point-text"><strong>自己投資</strong><br>未来のための投資</div>
+            <div class="method-point-text"><strong>維持費</strong><br>家・暮らしの維持に回す</div>
           </div>
         </div>
       </div>
@@ -1597,13 +1638,13 @@
           <li>家計のことは親にも相談しづらい</li>
           <li>本やセミナーで「知識」は得たけれど、投資やFPの話だけでは、今の赤字や漠然とした不安は変わらなかった</li>
         </ul>
-        <p>——そんな「知っているのに現実が変わらない」もやもやを、<strong>専属コーチと一緒に「貯める」「続ける」に落とし込んでいきます</strong>。</p>
-        <p>「貯める」「続ける」が整うと、<strong>将来への不安が「安心」と「自分でできそう」という感覚に変わっていく</strong>——それを、豊かな人生への小さな一歩として支えます。</p>
+        <p>——そんな「知っているのに現実が変わらない」もやもやを、<strong>専属コーチと一緒に「貯める」「続ける」に落とし込んでいきます</strong>。家計の棚卸しから始め、支出の見える化・先取り貯蓄の仕組みづくりまで、あなたのペースに合わせて伴走します。</p>
+        <p>「貯める」「続ける」が整うと、<strong>将来への不安が「安心」と「自分でできそう」という感覚に変わっていく</strong>——月々のやりくりに余裕ができ、教育費や老後も見通せる土台を、豊かな人生への小さな一歩として支えます。</p>
       </div>
       <div class="pill-row">
-        <span>ムリなく続く お金管理のコツ</span>
-        <span>迷わず進める 自分軸で判断</span>
-        <span>未来の安心をつくる 自動貯金体質へ</span>
+        <span>家計簿・支出の見える化で、ムリなく続けられる</span>
+        <span>専属コーチがあなたの家計に合わせてアドバイス</span>
+        <span>先取り貯蓄で、確実に貯まる仕組みをつくる</span>
       </div>
     </section>
 
@@ -1633,37 +1674,40 @@
       <div class="section-header">
         <div class="section-kicker">LEARN</div>
         <h2 class="section-title">Family Money Programで学べること</h2>
-        <p class="section-subtitle">私たちは、「わかった」で終わらせず、行動に繋げることを大切にしています。</p>
+        <p class="section-subtitle">私たちは、「わかった」で終わらせず、<strong>行動に繋げる</strong>ことを大切にしています。知識だけでは家計は変わりません。専属コーチと一緒に「今、何をするか」を決め、実践しながら積み上げていきます。</p>
       </div>
       <div class="learn-layout">
         <div class="card">
           <h3>一人ひとりに合わせた進め方</h3>
+          <p class="learn-first-step">まずは<strong>家計の棚卸しシートを一緒に埋め</strong>、収入・支出・貯蓄の「現在地」を把握します。そのうえで、無理のない目標（月々いくら貯めるか、何から手をつけるか）を決め、具体的なアクションに落とし込んでいきます。</p>
           <ul class="learn-list">
-            <li>フィードバックがあるから、ひとりより続けやすい</li>
-            <li>支出をきちんと把握し、あなたの状況に合わせたアドバイスを受けられる</li>
-            <li>貯めるために必要な行動に絞って、一緒に実践できる</li>
+            <li><strong>月1回の1on1</strong>で進捗を確認し、つまずきがあればその場でアドバイス。ひとりで続けるより、確実に前に進めます。</li>
+            <li><strong>支出の見える化</strong>を一緒に進めるので、「何にいくら使っているか」がわかり、あなたの状況に合った節約・貯蓄のポイントが明確になります。</li>
+            <li>あれもこれもではなく、<strong>「今やるべきこと」に絞って</strong>実践するので、続けやすく、結果も出やすいです。</li>
           </ul>
         </div>
         <div class="card">
           <h3>よく扱うテーマ例</h3>
+          <p style="margin-bottom: 12px; font-size: 0.9rem;">家計の悩みは人それぞれ。以下のようなテーマを、あなたの状況に合わせて組み合わせて扱います。</p>
           <ul class="learn-list">
-            <li><span class="learn-strong">ムリしない節約のコツ</span>でお金の流れが見える</li>
-            <li>収入を変えずに<span class="learn-strong">暮らしにゆとりをつくる</span>工夫</li>
-            <li><span class="learn-strong">支出のクセを見直し</span>ムダをスッキリ解消</li>
-            <li><span class="learn-strong">自分らしいお金の使い方</span>の見つけ方</li>
-            <li><span class="learn-strong">教育・住宅・老後に備える</span>お金のバランス術</li>
+            <li><span class="learn-strong">ムリしない節約のコツ</span>——削りすぎず、お金の流れが見えるやり方で続けられる</li>
+            <li><span class="learn-strong">収入を変えずにゆとりをつくる</span>——固定費の見直しや使い方の工夫で、暮らしの質を落とさず貯める</li>
+            <li><span class="learn-strong">支出のクセを見直す</span>——「なんとなく」で減らし、ムダをスッキリ解消</li>
+            <li><span class="learn-strong">自分らしいお金の使い方</span>——我慢ばかりにならない、納得できるバランスの見つけ方</li>
+            <li><span class="learn-strong">教育・住宅・老後</span>——いつまでにいくら必要か、今からどう備えるかのバランス術</li>
           </ul>
         </div>
       </div>
       <div class="card" style="margin-top: 20px;">
         <h3>Family Money Programの強み</h3>
-        <div class="pill-row">
-          <span>月1回の1on1トレーニング</span>
-          <span>支出の分析・見える化サポート</span>
-          <span>LINEでいつでも相談</span>
-          <span>資産形成のアドバイス</span>
-        </div>
-        <p style="margin-top: 12px;">「わかったつもり」で終わらせず、<strong>行動を通じて、家族を守る土台</strong>をつくります。</p>
+        <p style="margin-bottom: 14px; font-size: 0.9rem;">学んだことを「やれた」に変えるために、次の4つを軸にサポートします。</p>
+        <ul class="learn-list" style="margin-bottom: 14px;">
+          <li><strong>月1回の1on1トレーニング</strong>——Zoomで顔を合わせ、家計の進捗や悩みを話し、次のアクションを一緒に決めます。</li>
+          <li><strong>支出の分析・見える化サポート</strong>——家計簿のつけ方や分類のコツ、グラフで見える化する方法まで、実務ベースでサポートします。</li>
+          <li><strong>LINEでいつでも相談</strong>——トレーニング日以外も、わからないことや迷ったときにすぐ質問できます。</li>
+          <li><strong>資産形成のアドバイス</strong>——貯蓄が軌道に乗ってきたら、NISAやiDeCoなど、将来の資産づくりも相談できます。</li>
+        </ul>
+        <p style="margin-top: 12px; margin-bottom: 0;">「わかったつもり」で終わらせず、<strong>行動を通じて、家族を守る土台</strong>をつくります。</p>
       </div>
     </section>
 
@@ -1738,8 +1782,8 @@
           <div class="stat-label">平均月間改善額</div>
         </div>
         <div class="stat-item">
-          <div class="stat-number">150+</div>
-          <div class="stat-label">累計受講者数</div>
+          <div class="stat-number">少人数制</div>
+          <div class="stat-label">一人ひとりに寄り添う伴走</div>
         </div>
       </div>
       <div class="cta-inline">
@@ -1769,6 +1813,19 @@
       </div>
     </section>
 
+    <section id="blog">
+      <div class="section-header">
+        <div class="section-kicker">BLOG</div>
+        <h2 class="section-title">ブログ</h2>
+        <p class="section-subtitle">家計やお金にまつわる記事を更新しています</p>
+      </div>
+      <div id="blog-cms-content" class="blog-cms-content">
+        <div class="blog-fallback">
+          <a href="https://note.com/familymoney" target="_blank" rel="noopener" class="btn btn-outline">noteで記事を読む</a>
+        </div>
+      </div>
+    </section>
+
     <section id="flow">
       <div class="section-header">
         <div class="section-kicker">FLOW</div>
@@ -1780,11 +1837,13 @@
           <div class="flow-title">参加URLで受付</div>
           <p>開始5分前になったら、申込み完了メールに記載の「参加URL」をクリックしてください。</p>
         </div>
+        <div class="flow-arrow" aria-hidden="true">→</div>
         <div class="flow-item">
           <div class="flow-step">STEP 2</div>
           <div class="flow-title">好きな場所から参加</div>
           <p>顔出し不要のZoomです。リラックスしてご参加ください。</p>
         </div>
+        <div class="flow-arrow" aria-hidden="true">→</div>
         <div class="flow-item">
           <div class="flow-step">STEP 3</div>
           <div class="flow-title">1on1で直接質問</div>
@@ -1850,10 +1909,6 @@
           <div class="faq-q">トレーニングは、顔出し必須でしょうか？</div>
           <div class="faq-a">顔出しは任意です。ご安心ください。</div>
         </div>
-        <div class="faq-item">
-          <div class="faq-q">時間が取れないかもしれません</div>
-          <div class="faq-a">手軽に実践できるメール講座もご用意しています。無料相談に申し込まれた方にはご案内しています。</div>
-        </div>
       </div>
     </section>
 
@@ -1872,7 +1927,7 @@
           </ul>
         </div>
         <div class="card">
-          <p>「うちの家計も見てもらいたい」と思われた方は、下記の無料面談お申し込みフォームから、お気軽にご参加ください。</p>
+          <p>「うちの家計も見てもらいたい」と思われた方は、<br>下記の無料面談お申し込みフォームから、<br>お気軽にご参加ください。</p>
           <div class="cta-inline">
             <a href="#apply" class="btn btn-primary">申し込みフォームへ</a>
           </div>
@@ -1910,10 +1965,22 @@
         <h2 class="section-title">Family Moneyについて</h2>
       </div>
       <div class="company-grid">
-        <div class="company-image-placeholder">イメージ画像1</div>
-        <div class="company-image-placeholder">イメージ画像2</div>
-        <div class="company-image-placeholder">イメージ画像3</div>
-        <div class="company-image-placeholder">イメージ画像4</div>
+        <div class="company-image-box">
+          <img src="images/about/about_1.jpg" alt="Family Moneyの活動イメージ1" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <span class="company-image-fallback">イメージ画像1</span>
+        </div>
+        <div class="company-image-box">
+          <img src="images/about/about_2.jpg" alt="Family Moneyの活動イメージ2" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <span class="company-image-fallback">イメージ画像2</span>
+        </div>
+        <div class="company-image-box">
+          <img src="images/about/about_3.jpg" alt="Family Moneyの活動イメージ3" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <span class="company-image-fallback">イメージ画像3</span>
+        </div>
+        <div class="company-image-box">
+          <img src="images/about/about_4.jpg" alt="Family Moneyの活動イメージ4" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <span class="company-image-fallback">イメージ画像4</span>
+        </div>
       </div>
       <div class="card" style="margin-top: 20px;">
         <p>Family Moneyは、「家族のお金の不安をなくす」をミッションに、伴走型のお金のトレーニングを提供しています。知識だけでなく、行動につなげるサポートを大切にしています。</p>
