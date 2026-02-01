@@ -2,22 +2,21 @@
 html, body {
   height: auto;
   min-height: 0;
-  overflow: visible;
 }
 
-/* 固定・追従系を解除 */
-header,
-.site-header,
-.floating-cta {
+/* 固定・追従系を解除（fm-embed内だけ） */
+.fm-embed header,
+.fm-embed .site-header,
+.fm-embed .floating-cta {
   position: static !important;
 }
 
-/* 100vh固定を解除 */
-main,
-.wrapper,
-.container,
-#app,
-#root {
+/* 100vh固定を解除（保険） */
+.fm-embed main,
+.fm-embed .wrapper,
+.fm-embed .container,
+.fm-embed #app,
+.fm-embed #root {
   height: auto !important;
   min-height: 0 !important;
   overflow: visible !important;
@@ -25,6 +24,7 @@ main,
 
 .fm-embed { width: 100%; }
 .fm-embed .page { width: 100%; overflow-x: hidden; }
+
 
   /* ========== scope (外に漏らさない) ========== */
   .fm-embed,
