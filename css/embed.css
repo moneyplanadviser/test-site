@@ -1,0 +1,24 @@
+/* iframeでスクロールできるようにする */
+html, body {
+  height: auto !important;
+  min-height: 100%;
+  overflow: auto !important;
+}
+
+/* 固定・追従系を解除 */
+header,
+.site-header,
+.floating-cta {
+  position: static !important;
+}
+
+/* 100vh固定を解除 */
+main,
+.wrapper,
+.container,
+#app,
+#root {
+  height: auto !important;
+  min-height: 100% !important;
+  overflow: visible !important;
+}
