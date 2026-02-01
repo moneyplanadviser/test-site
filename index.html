@@ -2307,7 +2307,7 @@
       <div id="blog-cms-content" class="blog-cms-content"
            data-microcms-service="familymoney-note"
            data-microcms-apikey="xNL3h6tAE1G4EI0LtYdeHR0sFGGZeCiYW2vE"
-           data-microcms-endpoint="note_articles">
+           data-microcms-endpoint="note">
         <!-- microCMSでnote記事を取得して表示。未設定時はフォールバック表示 -->
         <div class="blog-fallback" id="blog-fallback">
           <a href="https://note.com/familymoney" target="_blank" rel="noopener" class="btn btn-outline">noteで記事を読む</a>
@@ -2707,12 +2707,15 @@
     if (!el) return;
     var service = el.getAttribute('data-microcms-service') || '';
     var apiKey = el.getAttribute('data-microcms-apikey') || '';
-    var endpoint = el.getAttribute('data-microcms-endpoint') || 'note_articles';
-    if (!service || !apiKey) return; // 未設定の場合はフォールバックのまま
+    var endpoint = el.getAttribute('data-microcms-endpoint') || 'note';
+    if (!service || !apiKey) return;
 
-    var url = 'https://' + service + '.microcms.io/api/v1/' + endpoint + '?limit=6&orders=-date&fields=title,url,excerpt,date';
+    var url = 'https://' + service + '.microcms.io/api/v1/' + endpoint + '?limit=6&orders=-publishedAt';
     fetch(url, { headers: { 'X-MICROCMS-API-KEY': apiKey } })
-      .then(function(r) { return r.ok ? r.json() : Promise.reject(); })
+      .then(function(r) {
+        if (!r.ok) return Promise.reject(new Error('API ' + r.status));
+        return r.json();
+      })
       .then(function(data) {
         var contents = data.contents || [];
         if (contents.length === 0) return;
@@ -2740,7 +2743,11 @@
         moreWrap.innerHTML = '<a href="https://note.com/familymoney" target="_blank" rel="noopener" class="btn btn-outline">noteでもっと読む</a>';
         el.appendChild(moreWrap);
       })
-      .catch(function() {});
+      .catch(function(err) {
+        console.warn('microCMSブログ取得失敗:', err.message || err);
+        var fb = document.getElementById('blog-fallback');
+        if (fb) fb.innerHTML = '<p style="color:#888;font-size:0.9rem;">ブログの読み込みに失敗しました。<a href="https://note.com/familymoney" target="_blank" rel="noopener">noteで記事を読む</a></p>';
+      });
   })();
   </script>
 </body>
