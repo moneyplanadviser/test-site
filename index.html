@@ -26,6 +26,9 @@
       --primary-dark: #a68821;
       --accent: #e8a838;
       --accent-light: #faf8f4;
+      /* CTA専用：ゴールドと明確に区別して視認性を高める */
+      --cta: #0c6b5e;
+      --cta-hover: #095048;
       /* 強調文字用：黄色とメリハリをつける濃色 */
       --emphasis: #1a1a1a;
       --bg: #ffffff;
@@ -179,14 +182,16 @@
     }
 
     .btn-primary {
-      background: linear-gradient(135deg, var(--primary), var(--primary-light));
+      background: linear-gradient(135deg, var(--cta), #0e7d6f);
       color: var(--white);
-      box-shadow: 0 10px 25px rgba(184, 134, 11, 0.3);
+      box-shadow: 0 4px 16px rgba(12, 107, 94, 0.35);
+      border: none;
     }
 
     .btn-primary:hover {
       transform: translateY(-1px);
-      box-shadow: 0 16px 35px rgba(184, 134, 11, 0.35);
+      background: linear-gradient(135deg, var(--cta-hover), var(--cta));
+      box-shadow: 0 8px 24px rgba(12, 107, 94, 0.4);
     }
 
     .btn-outline {
@@ -863,12 +868,14 @@
 
     .cta-block .btn-primary {
       background: var(--white);
-      color: var(--primary);
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+      color: var(--cta);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+      font-weight: 700;
     }
 
     .cta-block .btn-primary:hover {
-      background: var(--bg-alt);
+      background: #f0fdfa;
+      color: var(--cta-hover);
     }
 
     .cta-block .risk-reversal {
@@ -1051,6 +1058,7 @@
 
     .member-avatar {
       flex-shrink: 0;
+      align-self: center;
     }
 
     .member-avatar-placeholder {
@@ -1096,18 +1104,15 @@
       line-height: 1.7;
     }
 
-    .member-credential {
-      margin-top: 12px;
+    .member-credential-inline {
+      display: inline;
+      font-size: 0.85rem;
+      color: var(--primary-dark);
+      font-weight: 600;
     }
 
-    .member-credential span {
-      display: inline-block;
-      font-size: 0.8rem;
-      color: var(--primary-dark);
-      background: var(--accent-light);
-      padding: 4px 12px;
-      border-radius: 999px;
-      border: 1px solid rgba(184, 134, 11, 0.2);
+    .member-credential-inline::before {
+      content: '　';
     }
 
     .member-sns {
@@ -1555,7 +1560,7 @@
     }
 
     .floating-cta .btn {
-      box-shadow: 0 4px 20px rgba(184, 134, 11, 0.4);
+      box-shadow: 0 4px 20px rgba(12, 107, 94, 0.4);
     }
 
     /* Pricing Section */
@@ -2235,10 +2240,7 @@
           <div class="member-info">
             <div class="member-name">青木 計太</div>
             <div class="member-title">代表取締役</div>
-            <p class="member-desc">家計・資産運用・ライフプランニング領域で多数の実績を出したスペシャリスト。「知識」だけでなく「行動」につなげるサポートを大切にしています。</p>
-            <div class="member-credential">
-              <span>JEUGIAカルチャーセンター 認定講師</span>
-            </div>
+            <p class="member-desc">家計・資産運用・ライフプランニング領域で多数の実績を出したスペシャリスト。「知識」だけでなく「行動」につなげるサポートを大切にしています。<span class="member-credential-inline">JEUGIAカルチャーセンター認定講師</span></p>
             <div class="member-sns">
               <div class="member-sns-links">
                 <a href="https://x.com/kakei_adviser_" target="_blank" rel="noopener">X</a>
