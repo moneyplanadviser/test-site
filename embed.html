@@ -1,1 +1,521 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Family Money Program</title>
+
+  <!-- 通常のCSS -->
+  <link rel="stylesheet" href="./css/base.css">
+  <!-- ★ embed専用の上書きCSS -->
+  <link rel="stylesheet" href="./css/embed.css">
+</head>
+<body>
+
+  <!-- Family Money Program embed START -->
+<style>
+  /* ========== scope (外に漏らさない) ========== */
+  .fm-embed,
+  .fm-embed * { box-sizing: border-box; }
+
+  .fm-embed{
+    --primary:#c9a227;
+    --primary-light:#d4b43e;
+    --primary-dark:#a68821;
+    --accent:#e8a838;
+    --accent-light:#faf8f4;
+    --cta:#0c6b5e;
+    --cta-hover:#095048;
+    --emphasis:#1a1a1a;
+    --bg:#ffffff;
+    --bg-alt:#f8f7f5;
+    --text:#2d2a26;
+    --muted:#6b6560;
+    --white:#ffffff;
+    --max-width:1060px;
+    --radius-lg:18px;
+    --radius-md:12px;
+    --shadow-soft:0 22px 45px rgba(0,0,0,0.08);
+
+    margin: 0 auto;
+    color: var(--text);
+    background: transparent; /* 埋め込み先の背景に合わせる */
+    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue",
+      "YuGothic", "游ゴシック体", "Yu Gothic", "メイリオ", sans-serif;
+    line-height: 1.8;
+  }
+
+  .fm-embed a{ color: var(--primary); text-decoration: none; }
+  .fm-embed a:hover{ text-decoration: underline; }
+  .fm-embed strong{ color: var(--emphasis); font-weight: 700; }
+  .fm-embed img{ max-width: 100%; display: block; }
+
+  /* ========== layout ========== */
+  .fm-embed .page{
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 24px 20px 40px;
+    background: var(--bg);
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+  }
+
+  /* embedでは sticky header / floating CTA は基本OFF */
+  .fm-embed .site-header{ display:none; }
+  .fm-embed .floating-cta{ display:none !important; }
+
+  .fm-embed .btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    padding:12px 22px;
+    border-radius:999px;
+    border:none;
+    font-weight:600;
+    font-size:0.95rem;
+    cursor:pointer;
+    text-decoration:none;
+    transition:transform 0.08s ease, box-shadow 0.08s ease, background 0.12s ease;
+    white-space:nowrap;
+  }
+  .fm-embed .btn-primary{
+    background: linear-gradient(135deg, var(--cta), #0e7d6f);
+    color: var(--white);
+    box-shadow: 0 4px 16px rgba(12, 107, 94, 0.35);
+  }
+  .fm-embed .btn-primary:hover{
+    transform: translateY(-1px);
+    background: linear-gradient(135deg, var(--cta-hover), var(--cta));
+    box-shadow: 0 8px 24px rgba(12, 107, 94, 0.4);
+    text-decoration:none;
+  }
+  .fm-embed .btn-outline{
+    background: var(--white);
+    color: var(--primary);
+    border: 1px solid #d8e2dc;
+  }
+  .fm-embed .btn-outline:hover{ background:#f1f5f3; text-decoration:none; }
+
+  /* ========== hero ========== */
+  .fm-embed .hero{
+    position:relative;
+    display:grid;
+    grid-template-columns:minmax(0,1fr);
+    align-items:center;
+    padding:56px 40px;
+    min-height:420px;
+    border-radius:var(--radius-lg);
+    box-shadow:0 8px 40px rgba(184,134,11,0.15);
+    border:1px solid rgba(184,134,11,0.1);
+    overflow:hidden;
+    margin:0 0 18px;
+  }
+  .fm-embed .hero-bg-img{
+    position:absolute; inset:0;
+    width:100%; height:100%;
+    object-fit:cover;
+    z-index:0;
+  }
+  .fm-embed .hero::before{
+    content:'';
+    position:absolute; inset:0;
+    background: linear-gradient(to right,
+      rgba(253,252,250,0.97) 0%,
+      rgba(253,252,250,0.85) 40%,
+      rgba(253,252,250,0.4) 65%,
+      transparent 100%);
+    z-index:1;
+    pointer-events:none;
+  }
+  .fm-embed .hero-content{ position:relative; z-index:2; max-width:520px; }
+  .fm-embed .hero-title-main{ font-size:1.9rem; font-weight:700; margin:0 0 10px; }
+  .fm-embed .hero-title-sub{ font-size:1.1rem; font-weight:600; color:#444; margin:0 0 16px; }
+  .fm-embed .hero-em{ color: var(--emphasis); }
+  .fm-embed .hero-lead{ font-size:0.95rem; color:var(--muted); margin:0 0 24px; }
+  .fm-embed .hero-ctas{ display:flex; flex-wrap:wrap; gap:12px; align-items:center; }
+  .fm-embed .hero-cta-secondary{
+    font-size:0.9rem;
+    color:var(--primary);
+    text-decoration:underline;
+    text-underline-offset:3px;
+  }
+
+  /* ========== sections ========== */
+  .fm-embed section{ margin: 0; padding: 38px 0; }
+  .fm-embed section + section{ border-top: 1px solid #eee; } /* embedでは交互背景より軽く */
+
+  .fm-embed .section-header{ margin-bottom: 18px; text-align:center; }
+  .fm-embed .section-kicker{
+    display:inline-block;
+    font-size:0.75rem;
+    letter-spacing:0.15em;
+    text-transform:uppercase;
+    color:var(--white);
+    background:var(--primary);
+    padding:4px 14px;
+    border-radius:999px;
+    margin-bottom:12px;
+  }
+  .fm-embed .section-title{ font-size:1.5rem; font-weight:700; margin:0 0 8px; }
+  .fm-embed .section-subtitle{ font-size:0.95rem; color:var(--muted); margin:0; }
+
+  .fm-embed .card{
+    background:#fff;
+    border-radius:var(--radius-md);
+    padding:24px;
+    box-shadow:0 4px 20px rgba(0,0,0,0.08);
+  }
+  .fm-embed .card h3{ margin:0 0 12px; font-size:1.1rem; font-weight:700; color:var(--emphasis); }
+  .fm-embed .card p{ margin:0 0 10px; font-size:0.9rem; }
+  .fm-embed .card ul{ margin:8px 0 0; padding-left:18px; font-size:0.9rem; }
+
+  .fm-embed .problem-grid{
+    display:grid; grid-template-columns:1fr 1fr; gap:16px;
+    max-width:900px; margin:0 auto;
+  }
+  .fm-embed .problem-item{
+    display:flex; gap:12px;
+    padding:16px; border-radius:12px;
+    background:#fff;
+    box-shadow:0 2px 12px rgba(0,0,0,0.06);
+  }
+  .fm-embed .problem-icon{
+    flex-shrink:0; width:28px; height:28px; border-radius:999px;
+    background:linear-gradient(135deg,#ffcccb,#ffe5e0);
+    display:flex; align-items:center; justify-content:center;
+    font-size:0.9rem; color:#d32f2f;
+  }
+  .fm-embed .problem-text{ font-size:0.92rem; line-height:1.6; }
+
+  .fm-embed .recommend-grid{
+    display:grid; grid-template-columns:1fr 1fr; gap:14px;
+    max-width:900px; margin:0 auto;
+  }
+  .fm-embed .recommend-item{
+    padding:16px 20px;
+    border-radius:12px;
+    background:#fff;
+    box-shadow:0 2px 12px rgba(0,0,0,0.06);
+    position:relative;
+    padding-left:44px;
+    font-size:0.92rem;
+  }
+  .fm-embed .recommend-item::before{
+    content:"✓";
+    position:absolute;
+    left:16px; top:50%;
+    transform:translateY(-50%);
+    width:22px; height:22px;
+    border-radius:50%;
+    background:var(--primary);
+    color:#fff;
+    display:flex; align-items:center; justify-content:center;
+    font-size:0.7rem;
+  }
+
+  .fm-embed .cta-inline{ margin-top:24px; text-align:center; }
+  .fm-embed .micro-copy{ font-size:0.8rem; color:var(--muted); margin-top:8px; }
+
+  /* Method */
+  .fm-embed .method-card{ max-width:700px; margin:0 auto; }
+  .fm-embed .method-highlight{
+    background:linear-gradient(135deg,var(--primary) 0%, var(--primary-dark) 100%);
+    color:#fff;
+    border-radius:var(--radius-lg);
+    padding:32px;
+    text-align:center;
+    margin-bottom:24px;
+  }
+  .fm-embed .method-name{ font-size:2rem; font-weight:700; margin:0 0 12px; letter-spacing:0.05em; }
+  .fm-embed .method-desc{ font-size:0.95rem; margin:0; opacity:0.95; }
+  .fm-embed .method-points{ display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+  .fm-embed .method-point{
+    background:#fff;
+    border-radius:var(--radius-md);
+    padding:20px 16px;
+    text-align:center;
+    box-shadow:0 4px 20px rgba(0,0,0,0.08);
+  }
+  .fm-embed .method-point-num{ font-size:2rem; font-weight:700; color:var(--primary); margin:0 0 8px; line-height:1; }
+  .fm-embed .method-point-text{ font-size:0.85rem; line-height:1.5; }
+
+  /* Before/After */
+  .fm-embed .ba-grid{ display:grid; grid-template-columns:1fr auto 1fr; gap:20px; align-items:stretch; }
+  .fm-embed .ba-card{ background:#fff; border-radius:var(--radius-md); padding:20px; border:1px solid #edf0f6; }
+  .fm-embed .ba-card.before{ border-left:4px solid #e57373; }
+  .fm-embed .ba-card.after{ border-left:4px solid var(--primary); }
+  .fm-embed .ba-label{ font-size:0.75rem; font-weight:700; letter-spacing:0.1em; margin-bottom:12px; }
+  .fm-embed .ba-card.before .ba-label{ color:#e57373; }
+  .fm-embed .ba-card.after .ba-label{ color:var(--primary); }
+  .fm-embed .ba-list{ list-style:none; padding:0; margin:0; }
+  .fm-embed .ba-list li{ padding:8px 0; border-bottom:1px solid #f0f0f0; font-size:0.9rem; }
+  .fm-embed .ba-list li:last-child{ border-bottom:none; }
+  .fm-embed .ba-arrow{ display:flex; align-items:center; justify-content:center; font-size:2rem; color:var(--primary); }
+
+  /* Voices */
+  .fm-embed .voice-grid{ display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:18px 22px; }
+  .fm-embed .voice-card{
+    background:#fff;
+    border-radius:14px;
+    padding:16px 16px 14px;
+    border:1px solid #edf0f6;
+    box-shadow:0 10px 20px rgba(0,0,0,0.02);
+    font-size:0.9rem;
+  }
+  .fm-embed .voice-meta{ font-size:0.8rem; color:var(--muted); margin:0 0 4px; }
+  .fm-embed .voice-heading{ font-weight:700; font-size:0.96rem; margin:0 0 6px; color:#222; }
+  .fm-embed .voice-card p{ margin:0; }
+  .fm-embed .voice-card .voice-result{
+    margin-top:10px;
+    padding:8px 12px;
+    background:#f5f3ef;
+    border-radius:8px;
+    font-size:0.85rem;
+    color:var(--primary);
+    font-weight:600;
+  }
+
+  /* Apply */
+  .fm-embed .apply-frame{
+    background:#fff;
+    border-radius:var(--radius-lg);
+    padding:20px;
+    border:1px solid #edf0f6;
+    box-shadow:var(--shadow-soft);
+  }
+  .fm-embed .apply-frame iframe{ width:100%; border:0; border-radius:var(--radius-md); }
+
+  /* embedの注意：外側ページの固定ヘッダーとアンカーずれを避ける */
+  .fm-embed section[id]{ scroll-margin-top: 16px; }
+
+  /* responsive */
+  @media (max-width: 900px){
+    .fm-embed .problem-grid,
+    .fm-embed .recommend-grid,
+    .fm-embed .method-points,
+    .fm-embed .voice-grid{ grid-template-columns:1fr; }
+    .fm-embed .ba-grid{ grid-template-columns:1fr; }
+    .fm-embed .ba-arrow{ transform:rotate(90deg); }
+  }
+  @media (max-width: 640px){
+    .fm-embed .page{ padding:18px 14px 28px; border-radius: 12px; }
+    .fm-embed .hero{ padding:28px 20px; min-height:360px; }
+    .fm-embed .hero-title-main{ font-size:1.6rem; }
+    .fm-embed .section-title{ font-size:1.12rem; }
+  }
+</style>
+
+<div class="fm-embed">
+  <div class="page">
+
+    <!-- HERO -->
+    <section class="hero" aria-label="ヒーロー">
+      <img src="images/family-money-hero-top.png" alt="リビングで家族が笑顔で話す様子" class="hero-bg-img" width="1080" height="720" loading="lazy" />
+      <div class="hero-content">
+        <h1 class="hero-title-main">
+          給料は上がらないのに、<br />物価だけが上がる——
+        </h1>
+        <p class="hero-title-sub">
+          その不安、<span class="hero-em">ひとりで抱えなくて大丈夫</span>です。
+        </p>
+        <p class="hero-lead">家族の暮らしと未来を守る、伴走型お金のトレーニング</p>
+        <div class="hero-ctas">
+          <a href="https://b-book.run/@moneyplan.adviser" class="btn btn-primary" target="_blank" rel="noopener">無料相談を申し込む</a>
+          <a href="#present" class="hero-cta-secondary">無料プレゼントを見る</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROBLEM -->
+    <section id="problems">
+      <div class="section-header">
+        <div class="section-kicker">PROBLEM</div>
+        <h2 class="section-title">こんなお悩み、ありませんか？</h2>
+      </div>
+
+      <div class="problem-grid">
+        <div class="problem-item">
+          <div class="problem-icon">•</div>
+          <div class="problem-text">クレジットカードの請求が毎月予想外に高額で、「使った気がしないのに、なんで5万円も？」と驚いている</div>
+        </div>
+        <div class="problem-item">
+          <div class="problem-icon">•</div>
+          <div class="problem-text">子供の将来にいくらかかるのか全くわからず、「教育費2000万円って本当？うちには無理…」と漠然と不安</div>
+        </div>
+        <div class="problem-item">
+          <div class="problem-icon">•</div>
+          <div class="problem-text">家計が圧迫していて、旦那から「お小遣い増やして」と言われても、むしろ減らさないといけない</div>
+        </div>
+        <div class="problem-item">
+          <div class="problem-icon">•</div>
+          <div class="problem-text">夫婦でお金の話をするとギクシャクして、相談できる相手がいない</div>
+        </div>
+        <div class="problem-item">
+          <div class="problem-icon">•</div>
+          <div class="problem-text">車の買い替え、家、教育費——何をどう準備すればいいかわからず、将来がぼんやり怖い</div>
+        </div>
+        <div class="problem-item">
+          <div class="problem-icon">•</div>
+          <div class="problem-text">市役所や手続きのたびに「こんなにお金がかかるの？」と知って、不安が増えていく</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SOLUTION -->
+    <section id="solution">
+      <div class="section-header">
+        <div class="section-kicker">SOLUTION</div>
+        <h2 class="section-title">貯まらない原因は「お金の使い方」にあります</h2>
+      </div>
+      <div class="card">
+        <p>不安は、あなたが悪いから生まれるわけではありません。</p>
+        <p>「見えない」「相談できる人がいない」「何から手をつければいいかわからない」——その3つが重なると、誰でも不安になります。</p>
+        <p>Family Money Programは、<strong>専属コーチがあなたの家計と向き合い、見える化と計画の"伴走"をする</strong>サービスです。</p>
+        <p style="margin-top: 12px;"><strong>物価高が続く今の世の中でも、確実に貯まる家計を実現しています。</strong></p>
+      </div>
+    </section>
+
+    <!-- METHOD -->
+    <section id="method">
+      <div class="section-header">
+        <div class="section-kicker">METHOD</div>
+        <h2 class="section-title">5年で1,300万円貯めた独自メソッド</h2>
+        <p class="section-subtitle">再現性のある方法として体系化しました</p>
+      </div>
+      <div class="method-card">
+        <div class="method-highlight">
+          <div class="method-name">1:4:5の法則</div>
+          <p class="method-desc">収入を「貯蓄:生活費:維持費」に最適配分する独自メソッド。<br>無理な節約ではなく、お金の使い方を変えることで、自然と貯まる仕組みをつくります。</p>
+        </div>
+        <div class="method-points">
+          <div class="method-point">
+            <div class="method-point-num">1</div>
+            <div class="method-point-text"><strong>貯蓄</strong><br>先取りで確実に貯める</div>
+          </div>
+          <div class="method-point">
+            <div class="method-point-num">4</div>
+            <div class="method-point-text"><strong>生活費</strong><br>ムリなく暮らしを維持</div>
+          </div>
+          <div class="method-point">
+            <div class="method-point-num">5</div>
+            <div class="method-point-text"><strong>維持費</strong><br>家・暮らしの維持に回す</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RECOMMEND -->
+    <section id="recommend">
+      <div class="section-header">
+        <div class="section-kicker">RECOMMEND</div>
+        <h2 class="section-title">こんな人におすすめです</h2>
+      </div>
+      <div class="recommend-grid">
+        <div class="recommend-item">節約ばかりの暮らしから抜け出したい</div>
+        <div class="recommend-item">自分や家族に合った、無理のないお金の貯め方を見つけたい</div>
+        <div class="recommend-item">子供の教育費や老後のために、いまからしっかり準備したい</div>
+        <div class="recommend-item">家計管理を始めたいが、これまで続かなかった——挫折しないやり方を知りたい</div>
+      </div>
+      <div class="cta-inline">
+        <a href="https://b-book.run/@moneyplan.adviser" class="btn btn-primary" target="_blank" rel="noopener">まずは無料相談を申し込む</a>
+        <p class="micro-copy">※強引な勧誘は一切ありません</p>
+      </div>
+    </section>
+
+    <!-- BEFORE / AFTER -->
+    <section id="changes">
+      <div class="section-header">
+        <div class="section-kicker">BEFORE / AFTER</div>
+        <h2 class="section-title">受講前と受講後で、こんなに変わります</h2>
+      </div>
+      <div class="ba-grid">
+        <div class="ba-card before">
+          <div class="ba-label">Before ー 受講前</div>
+          <ul class="ba-list">
+            <li>月末になると通帳を何度も確認してしまう</li>
+            <li>「今月も赤字かも…」と不安で眠れない夜がある</li>
+            <li>夫婦でお金の話をするとケンカになる</li>
+          </ul>
+        </div>
+        <div class="ba-arrow">→</div>
+        <div class="ba-card after">
+          <div class="ba-label">After ー 受講後</div>
+          <ul class="ba-list">
+            <li>「今月も予定通り」と安心して過ごせる</li>
+            <li>お金の流れが見えて、心に余裕が生まれた</li>
+            <li>夫婦で家計を共有、同じ目標に向かえる</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- VOICE -->
+    <section id="voices">
+      <div class="section-header">
+        <div class="section-kicker">VOICE</div>
+        <h2 class="section-title">受講された方の声</h2>
+      </div>
+      <div class="voice-grid">
+        <div class="voice-card">
+          <div class="voice-meta">40代夫婦・子ども2人</div>
+          <div class="voice-heading">目からウロコが落ちた!</div>
+          <p>ただ節約を教えるのではなく、「使うこと=楽しむこと」を体験しながら、自然と貯まっていく流れを設計してくれるところが新鮮でした。</p>
+          <div class="voice-result">受講3ヶ月で月3.2万円の固定費削減に成功</div>
+        </div>
+        <div class="voice-card">
+          <div class="voice-meta">40代男性・会社員</div>
+          <div class="voice-heading">お金の使い方を見直す!</div>
+          <p>仕組みさえつくってしまえば、考える必要がないという気づきが嬉しかったです。</p>
+          <div class="voice-result">夫婦で家計を共有、月約3.3万円の貯蓄増</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRESENT -->
+    <section id="present">
+      <div class="section-header">
+        <div class="section-kicker">PRESENT</div>
+        <h2 class="section-title">無料面談ご参加特典</h2>
+        <p class="section-subtitle">※無料面談お申し込みの方限定</p>
+      </div>
+      <div class="card">
+        <h3>お申し込みいただいた方にプレゼント</h3>
+        <p>無料面談にお申し込みいただいた方に、特典をお渡しします（申し込み後にご案内します）。</p>
+        <div class="cta-inline">
+          <a href="https://b-book.run/@moneyplan.adviser" class="btn btn-primary" target="_blank" rel="noopener">無料面談を申し込む</a>
+          <p class="micro-copy">※相談だけでもOK。ご納得いただけなければお断りください</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- APPLY -->
+    <section id="apply">
+      <div class="section-header">
+        <div class="section-kicker">APPLY</div>
+        <h2 class="section-title">無料相談お申し込み</h2>
+        <p class="section-subtitle">下記カレンダーからご都合の良い日時をお選びください</p>
+      </div>
+      <div class="apply-frame">
+        <iframe
+          src="https://b-book.run/@moneyplan.adviser"
+          height="600"
+          loading="lazy"
+          title="無料相談予約フォーム"
+        ></iframe>
+      </div>
+      <p class="micro-copy" style="text-align:center; margin-top:12px;">※ご納得いただけなければ、その場でお断りいただいて構いません</p>
+    </section>
+
+  </div>
+</div>
+<!-- Family Money Program embed END -->
+
+  <!-- ▼ ここに今のページ内容をそのまま貼る ▼ -->
+  <!-- header / hero / sections / apply など全部 -->
+  
+  <script src="./js/main.js"></script>
+</body>
+</html>
 
