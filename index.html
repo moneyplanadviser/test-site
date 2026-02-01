@@ -260,61 +260,27 @@
     }
 
     .hero-lead {
-      font-size: 0.98rem;
+      font-size: 0.95rem;
       color: var(--muted);
-      margin-bottom: 20px;
-    }
-
-    .hero-meta {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-bottom: 18px;
-      font-size: 0.86rem;
-      color: var(--muted);
-    }
-
-    .meta-pill {
-      padding: 4px 10px;
-      border-radius: 999px;
-      background: #ffffff;
-      border: 1px solid #e1e5ea;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
+      margin-bottom: 24px;
     }
 
     .hero-ctas {
       display: flex;
       flex-wrap: wrap;
-      gap: 10px;
+      gap: 12px;
       align-items: center;
-      margin-bottom: 16px;
     }
 
-    .hero-note {
-      font-size: 0.8rem;
-      color: var(--muted);
+    .hero-cta-secondary {
+      font-size: 0.9rem;
+      color: var(--primary);
+      text-decoration: underline;
+      text-underline-offset: 3px;
     }
 
-    .hero-present {
-      margin-top: 10px;
-      padding: 12px 14px;
-      border-radius: 12px;
-      background: #fff7e9;
-      border: 1px solid #ffe0a6;
-      font-size: 0.86rem;
-    }
-
-    .hero-present-title {
-      font-weight: 700;
-      color: #b26a00;
-      margin-bottom: 4px;
-    }
-
-    .hero-present-list {
-      margin: 0;
-      padding-left: 18px;
+    .hero-cta-secondary:hover {
+      color: var(--primary-dark);
     }
 
     section {
@@ -500,26 +466,53 @@
       align-items: flex-start;
     }
 
+    .learn-card h3 {
+      margin-bottom: 12px;
+    }
+
+    .learn-summary {
+      margin: 0 0 14px;
+      padding: 10px 14px;
+      background: #fff9f0;
+      border-radius: 8px;
+      font-size: 0.88rem;
+      line-height: 1.6;
+      color: var(--text);
+    }
+
     .learn-list {
       margin: 10px 0 0;
       padding-left: 18px;
       font-size: 0.9rem;
     }
 
-    .learn-strong {
-      font-weight: 600;
-      color: var(--emphasis);
+    .learn-list--short li {
+      margin-bottom: 6px;
+      line-height: 1.5;
     }
 
-    .learn-first-step {
-      margin: 0 0 12px;
-      padding: 12px 14px;
-      background: #fff9f0;
-      border: 1px solid #ffe0a6;
-      border-radius: 10px;
+    .learn-list--tags {
+      list-style: none;
+      padding-left: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .learn-list--tags li {
+      padding: 6px 12px;
+      background: var(--bg-alt);
+      border-radius: 8px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      display: inline-block;
+    }
+
+    .learn-close {
+      margin: 16px 0 0;
+      padding-top: 14px;
+      border-top: 1px solid #eee;
       font-size: 0.9rem;
-      line-height: 1.7;
-      color: var(--text);
     }
 
     .feature-list {
@@ -1061,6 +1054,14 @@
       align-self: center;
     }
 
+    .member-avatar-img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      display: block;
+    }
+
     .member-avatar-placeholder {
       width: 120px;
       height: 120px;
@@ -1147,10 +1148,69 @@
       text-decoration: none;
     }
 
-    /* Blog Section（CMS連携用） */
+    /* Blog Section（microCMS連携） */
     .blog-cms-content {
       max-width: 900px;
       margin: 0 auto;
+    }
+
+    .blog-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .blog-card {
+      background: #fff;
+      border: 1px solid #e8e6e3;
+      border-radius: var(--radius-md);
+      padding: 18px 20px;
+      transition: box-shadow 0.2s, border-color 0.2s;
+    }
+
+    .blog-card:hover {
+      border-color: rgba(184, 134, 11, 0.3);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+    }
+
+    .blog-card a {
+      text-decoration: none;
+      color: inherit;
+      display: block;
+      height: 100%;
+    }
+
+    .blog-card-date {
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-bottom: 6px;
+    }
+
+    .blog-card-title {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text);
+      line-height: 1.5;
+      margin: 0 0 8px;
+    }
+
+    .blog-card-excerpt {
+      font-size: 0.82rem;
+      color: var(--muted);
+      line-height: 1.5;
+      margin: 0;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .blog-more-wrap {
+      text-align: center;
+      margin-top: 20px;
     }
 
     .blog-cms-content .blog-fallback {
@@ -1949,38 +2009,11 @@
           その不安、<span class="hero-em">ひとりで抱えなくて大丈夫</span>です。
         </p>
         <p class="hero-lead">
-          家族の暮らしと未来を守る、<span class="hero-em">伴走型</span>
-          お金のトレーニング<br />
-          <strong>Family Money Program</strong>
+          家族の暮らしと未来を守る、伴走型お金のトレーニング
         </p>
-        <div class="hero-meta">
-          <span class="meta-pill">
-            <span>少人数制</span><strong>手厚い伴走</strong>
-          </span>
-          <span class="meta-pill">
-            <span>受講満足度</span><strong>98%</strong>
-          </span>
-        </div>
-
         <div class="hero-ctas">
-          <a
-            href="https://b-book.run/@moneyplan.adviser"
-            class="btn btn-primary"
-          >
-            無料相談を申し込む
-          </a>
-          <a href="#present" class="btn btn-outline"> 無料プレゼントを確認する </a>
-        </div>
-        <p class="hero-note">
-          ※お申し込み後のオンライン無料セミナー内で、今の家計についてご相談いただけます。
-        </p>
-
-        <div class="hero-present">
-          <div class="hero-present-title">無料面談にお申し込みいただいた方へ、以下の特典をプレゼント</div>
-          <ul class="hero-present-list">
-            <li>簡単ライフシミュレーション</li>
-            <li>家計診断チェックシート</li>
-          </ul>
+          <a href="https://b-book.run/@moneyplan.adviser" class="btn btn-primary">無料相談を申し込む</a>
+          <a href="#present" class="hero-cta-secondary">無料プレゼントを見る</a>
         </div>
       </div>
     </section>
@@ -2108,40 +2141,38 @@
       <div class="section-header">
         <div class="section-kicker">LEARN</div>
         <h2 class="section-title">Family Money Programで学べること</h2>
-        <p class="section-subtitle">私たちは、「わかった」で終わらせず、<strong>行動に繋げる</strong>ことを大切にしています。知識だけでは家計は変わりません。専属コーチと一緒に「今、何をするか」を決め、実践しながら積み上げていきます。</p>
+        <p class="section-subtitle"><strong>「わかった」で終わらせず、行動に繋げる。</strong>専属コーチと一緒に、今やることを決めて実践していきます。</p>
       </div>
       <div class="learn-layout">
-        <div class="card">
+        <div class="card learn-card">
           <h3>一人ひとりに合わせた進め方</h3>
-          <p class="learn-first-step">まずは<strong>家計の棚卸しシートを一緒に埋め</strong>、収入・支出・貯蓄の「現在地」を把握します。そのうえで、無理のない目標（月々いくら貯めるか、何から手をつけるか）を決め、具体的なアクションに落とし込んでいきます。</p>
-          <ul class="learn-list">
-            <li><strong>月1回の1on1</strong>で進捗を確認し、つまずきがあればその場でアドバイス。ひとりで続けるより、確実に前に進めます。</li>
-            <li><strong>支出の見える化</strong>を一緒に進めるので、「何にいくら使っているか」がわかり、あなたの状況に合った節約・貯蓄のポイントが明確になります。</li>
-            <li>あれもこれもではなく、<strong>「今やるべきこと」に絞って</strong>実践するので、続けやすく、結果も出やすいです。</li>
+          <p class="learn-summary">棚卸しで現在地を把握 → 無理のない目標を設定 → 具体的なアクションに落とし込む</p>
+          <ul class="learn-list learn-list--short">
+            <li><strong>月1回1on1</strong> — 進捗確認とその場アドバイス</li>
+            <li><strong>支出の見える化</strong> — 何にいくら使っているか把握</li>
+            <li><strong>今やることに絞る</strong> — 続けやすく、結果も出やすい</li>
           </ul>
         </div>
-        <div class="card">
+        <div class="card learn-card">
           <h3>よく扱うテーマ例</h3>
-          <p style="margin-bottom: 12px; font-size: 0.9rem;">家計の悩みは人それぞれ。以下のようなテーマを、あなたの状況に合わせて組み合わせて扱います。</p>
-          <ul class="learn-list">
-            <li><span class="learn-strong">ムリしない節約のコツ</span>——削りすぎず、お金の流れが見えるやり方で続けられる</li>
-            <li><span class="learn-strong">収入を変えずにゆとりをつくる</span>——固定費の見直しや使い方の工夫で、暮らしの質を落とさず貯める</li>
-            <li><span class="learn-strong">支出のクセを見直す</span>——「なんとなく」で減らし、ムダをスッキリ解消</li>
-            <li><span class="learn-strong">自分らしいお金の使い方</span>——我慢ばかりにならない、納得できるバランスの見つけ方</li>
-            <li><span class="learn-strong">教育・住宅・老後</span>——いつまでにいくら必要か、今からどう備えるかのバランス術</li>
+          <ul class="learn-list learn-list--tags">
+            <li>ムリしない節約のコツ</li>
+            <li>収入を変えずにゆとりをつくる</li>
+            <li>支出のクセを見直す</li>
+            <li>自分らしいお金の使い方</li>
+            <li>教育・住宅・老後の備え</li>
           </ul>
         </div>
       </div>
-      <div class="card" style="margin-top: 20px;">
+      <div class="card learn-card learn-strengths" style="margin-top: 20px;">
         <h3>Family Money Programの強み</h3>
-        <p style="margin-bottom: 14px; font-size: 0.9rem;">学んだことを「やれた」に変えるために、次の4つを軸にサポートします。</p>
-        <ul class="learn-list" style="margin-bottom: 14px;">
-          <li><strong>月1回の1on1トレーニング</strong>——Zoomで顔を合わせ、家計の進捗や悩みを話し、次のアクションを一緒に決めます。</li>
-          <li><strong>支出の分析・見える化サポート</strong>——家計簿のつけ方や分類のコツ、グラフで見える化する方法まで、実務ベースでサポートします。</li>
-          <li><strong>LINEでいつでも相談</strong>——トレーニング日以外も、わからないことや迷ったときにすぐ質問できます。</li>
-          <li><strong>資産形成のアドバイス</strong>——貯蓄が軌道に乗ってきたら、NISAやiDeCoなど、将来の資産づくりも相談できます。</li>
+        <ul class="learn-list learn-list--short">
+          <li><strong>月1回1on1</strong> — Zoomで進捗と悩みを共有、次を一緒に決める</li>
+          <li><strong>支出の見える化</strong> — 家計簿・分類・グラフまで実務ベースでサポート</li>
+          <li><strong>LINE相談</strong> — いつでも質問OK</li>
+          <li><strong>資産形成</strong> — NISA・iDeCoなども相談可能</li>
         </ul>
-        <p style="margin-top: 12px; margin-bottom: 0;">「わかったつもり」で終わらせず、<strong>行動を通じて、家族を守る土台</strong>をつくります。</p>
+        <p class="learn-close">「わかったつもり」で終わらせず、<strong>行動で家族を守る土台</strong>をつくります。</p>
       </div>
     </section>
 
@@ -2191,7 +2222,7 @@
           <div class="voice-meta">40代男性・会社員</div>
           <div class="voice-heading">お金の使い方を見直す!</div>
           <p>仕組みさえつくってしまえば、考える必要がないという気づきが嬉しかったです。受講中、妻にも青木先生の話を聞いてもらいたくて、思わず妻にも参加してもらい夫婦そろってお聞きしました。</p>
-          <div class="voice-result">夫婦で家計を共有、年間40万円の貯蓄増</div>
+          <div class="voice-result">夫婦で家計を共有、月約3.3万円の貯蓄増</div>
         </div>
         <div class="voice-card">
           <div class="voice-meta">30代女性・主婦</div>
@@ -2203,7 +2234,7 @@
           <div class="voice-meta">40代夫婦・共働き</div>
           <div class="voice-heading">現状把握ができた</div>
           <p>どのくらい損をしているのかが明確になり、プロの視点でアドバイスをもらえたことで、自分だけでは気づけなかったことに気づけました。</p>
-          <div class="voice-result">保険の見直しで年間18万円の節約</div>
+          <div class="voice-result">保険の見直しで月1.5万円の節約</div>
         </div>
       </div>
       <div class="stats-bar">
@@ -2235,7 +2266,8 @@
       <div class="member-card">
         <div class="member-profile-row">
           <div class="member-avatar">
-            <div class="member-avatar-placeholder">PHOTO</div>
+            <img src="images/instructor_photo.png" alt="青木 計太" class="member-avatar-img" width="120" height="120" loading="lazy" onerror="this.onerror=null; this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="member-avatar-placeholder" style="display:none;">PHOTO</div>
           </div>
           <div class="member-info">
             <div class="member-name">青木 計太</div>
@@ -2272,9 +2304,12 @@
         <h2 class="section-title">ブログ</h2>
         <p class="section-subtitle">家計やお金にまつわる記事を更新しています</p>
       </div>
-      <div id="blog-cms-content" class="blog-cms-content">
-        <!-- CMS（microCMS等）で記事一覧を取得して表示するエリア。未連携時は下記リンクを表示 -->
-        <div class="blog-fallback">
+      <div id="blog-cms-content" class="blog-cms-content"
+           data-microcms-service="familymoney-note"
+           data-microcms-apikey="xNL3h6tAE1G4EI0LtYdeHR0sFGGZeCiYW2vE"
+           data-microcms-endpoint="note_articles">
+        <!-- microCMSでnote記事を取得して表示。未設定時はフォールバック表示 -->
+        <div class="blog-fallback" id="blog-fallback">
           <a href="https://note.com/familymoney" target="_blank" rel="noopener" class="btn btn-outline">noteで記事を読む</a>
         </div>
       </div>
@@ -2664,5 +2699,49 @@
       }
     }
   </style>
+
+  <!-- microCMS: note記事を取得してブログセクションに表示 -->
+  <script>
+  (function() {
+    var el = document.getElementById('blog-cms-content');
+    if (!el) return;
+    var service = el.getAttribute('data-microcms-service') || '';
+    var apiKey = el.getAttribute('data-microcms-apikey') || '';
+    var endpoint = el.getAttribute('data-microcms-endpoint') || 'note_articles';
+    if (!service || !apiKey) return; // 未設定の場合はフォールバックのまま
+
+    var url = 'https://' + service + '.microcms.io/api/v1/' + endpoint + '?limit=6&orders=-date&fields=title,url,excerpt,date';
+    fetch(url, { headers: { 'X-MICROCMS-API-KEY': apiKey } })
+      .then(function(r) { return r.ok ? r.json() : Promise.reject(); })
+      .then(function(data) {
+        var contents = data.contents || [];
+        if (contents.length === 0) return;
+        var fallback = document.getElementById('blog-fallback');
+        if (fallback) fallback.style.display = 'none';
+        var ul = document.createElement('ul');
+        ul.className = 'blog-list';
+        contents.forEach(function(item) {
+          var li = document.createElement('li');
+          li.className = 'blog-card';
+          var dt = item.date || item.publishedAt;
+          var dateStr = dt ? new Date(dt).toLocaleDateString('ja-JP', { year: 'numeric', month: '2-digit', day: '2-digit' }).replace(/\//g, '.') : '';
+          var link = item.url || item.URL || 'https://note.com/familymoney';
+          var excerpt = item.excerpt || item.sample || '';
+          li.innerHTML = '<a href="' + link.replace(/"/g, '&quot;') + '" target="_blank" rel="noopener">' +
+            (dateStr ? '<div class="blog-card-date">' + dateStr + '</div>' : '') +
+            '<div class="blog-card-title">' + (item.title || '記事').replace(/</g, '&lt;').replace(/>/g, '&gt;') + '</div>' +
+            (excerpt ? '<p class="blog-card-excerpt">' + excerpt.replace(/</g, '&lt;').replace(/>/g, '&gt;') + '</p>' : '') +
+            '</a>';
+          ul.appendChild(li);
+        });
+        el.insertBefore(ul, fallback);
+        var moreWrap = document.createElement('div');
+        moreWrap.className = 'blog-more-wrap';
+        moreWrap.innerHTML = '<a href="https://note.com/familymoney" target="_blank" rel="noopener" class="btn btn-outline">noteでもっと読む</a>';
+        el.appendChild(moreWrap);
+      })
+      .catch(function() {});
+  })();
+  </script>
 </body>
 </html>
