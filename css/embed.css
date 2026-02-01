@@ -1,8 +1,8 @@
 /* iframeでスクロールできるようにする */
 html, body {
-  height: auto !important;
-  min-height: 100%;
-  overflow: auto !important;
+  height: auto;
+  min-height: 0;
+  overflow: visible;
 }
 
 /* 固定・追従系を解除 */
@@ -19,11 +19,13 @@ main,
 #app,
 #root {
   height: auto !important;
-  min-height: 100% !important;
+  min-height: 0 !important;
   overflow: visible !important;
 }
 
-<style>
+.fm-embed { width: 100%; }
+.fm-embed .page { width: 100%; overflow-x: hidden; }
+
   /* ========== scope (外に漏らさない) ========== */
   .fm-embed,
   .fm-embed * { box-sizing: border-box; }
@@ -314,4 +316,4 @@ main,
     .fm-embed .hero-title-main{ font-size:1.6rem; }
     .fm-embed .section-title{ font-size:1.12rem; }
   }
-</style>
+
